@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+ 
+    background-color: #EFEFEF;
+  }
+  
+header {
+    font-family: 'Neu', sans-serif; /* Use the custom font in your styles */
+    /* Other styles for the body */
+    background-color: #EFEFEF; /* Replace with your desired background color */
+    color: #F3D8E3;
+    text-align: left; /* Align text to the left */
+    position: fixed;
+    
+}
+
+header h1 {
+    padding-top: 10px; /* Remove top and bottom margin to move text to the top-left corner */
+    font-size: 2.5vw; /* Adjust the font size as needed */
+    position: fixed;
+    
+    /* Add the text stroke effect */
+    color: #1A2EFF; /* Set text color to transparent to avoid double fill */
+}
+
+.container {
+    max-width: 1960px;
+    margin: 0 auto 0 40px;
+    padding: 20 70px; /* Add left and right padding */
+   
+}
+
+.project h2 {
+    margin-right: 0px;
+    font-family: 'Neu', sans-serif;
+    color: #EFEFEF;
+    text-align: right;
+   
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #1A2EFF;
+    font-size: 12vw;
+    line-height: 35px;
+  
+    
+}
+.project h2:hover{
+animation: color-change .2s forwards;
+}
+.project con{
+float: right;
+
+padding-right: 80px;
+transform: perspective(700px) rotateY(-20deg);
+transform-origin: 100% 30%;
+}
+
+
+
+.grow { 
+    transition: all .2s ease-in-out; 
+    }
+    
+.grow:hover { 
+    transform-origin: 100% 50%;
+    transform:  perspective(400px) rotateY(1deg) ;
+
+}
+
+.eyes {
+  position: absolute;
+  display: flex;
+  justify-content: left;
+  margin-left: 150px;
+  top: 20%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.eye-container {
+  max-width: 320px;
+  margin-left: -90px;
+  margin-right: -90px;
+  position: relative;
+  margin: calc(min(60px,-95px));
+}
+
+.eye {
+  width: 89px;
+  max-width: 90px;
+  height: 125px;
+  max-height: 125px;
+  background: #fff;
+  display: inline-block;
+  margin: 40px 15px;
+  border-radius: 50%;
+  position: relative;
+  top: -20px;
+  overflow: hidden;
+  border-top: 6px solid #1A2EFF;
+  border-left: 6px solid #1A2EFF;
+  border-bottom: 6px solid #1A2EFF;
+  border-right: 6px solid #1A2EFF;
+  z-index: 97;
+}
+
+
+
+.pupil {
+  width: 70px;
+  height: 90px;
+  background-image: url("pupil.png");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 60%;
+  z-index: 98;
+}
+
+
+
+@keyframes color-change {
+
+    
+    100% { color: #1A2EFF; }
+ }
+    
+
+/* Add this at the beginning of your styles.css file */
+
+@font-face {
+    font-family: 'Moda';
+    src: url('Fonts/Moda.otf') format('opentype'); /* Adjust the file name and format accordingly */
+}
+
+@font-face {
+    font-family: 'Robinson';
+    src: url('Fonts/Robinson.otf') format('opentype'); /* Adjust the file name and format accordingly */
+}
+@font-face {
+    font-family: 'Ropinie';
+    src: url('Fonts/Ropinie.otf') format('opentype'); /* Adjust the file name and format accordingly */
+}
+@font-face {
+    font-family: 'Ramesha Bold';
+    src: url('Fonts/Ramesha Bold.otf') format('opentype'); /* Adjust the file name and format accordingly */
+}
+@font-face {
+    font-family: 'Moda';
+    src: url('Fonts/Moda.otf') format('opentype'); /* Adjust the file name and format accordingly */
+}
+@font-face {
+    font-family: 'Uniqlo';
+    src: url('Fonts/Uniclo-BlackItalic.otf') format('opentype'); /* Adjust the file name and format accordingly */
+}
+@font-face {
+    font-family: 'Neu';
+    src: url('Fonts/NeuethingSans-ExtraBoldUltraExpanded.ttf') format('truetype'); /* Adjust the file name and format accordingly */
+}
+/* Rest of your CSS styles */
+
+
