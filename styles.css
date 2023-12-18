@@ -3,12 +3,14 @@ body {
  
     background-color: #EFEFEF;
   }
-  
+  canvas {
+    position: fixed !important;
+ }
 header {
     font-family: 'Neu', sans-serif; /* Use the custom font in your styles */
     /* Other styles for the body */
-    background-color: #EFEFEF; /* Replace with your desired background color */
-    color: #F3D8E3;
+    /* Replace with your desired background color */
+   
     text-align: left; /* Align text to the left */
     position: fixed;
     
@@ -67,11 +69,11 @@ transform-origin: 100% 30%;
 }
 
 .eyes {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: left;
-  margin-left: 150px;
-  top: 20%;
+  margin-left: 103px;
+  top: 230px;
   transform: translateY(-50%);
   width: 100%;
   text-align: center;
@@ -86,30 +88,31 @@ transform-origin: 100% 30%;
 }
 
 .eye {
-  width: 89px;
-  max-width: 90px;
-  height: 125px;
-  max-height: 125px;
+  width: 35px;
+  max-width: 35px;
+  height: 50px;
+  max-height: 60px;
   background: #fff;
   display: inline-block;
-  margin: 40px 15px;
+  margin: 40px 61px;
   border-radius: 50%;
   position: relative;
   top: -20px;
   overflow: hidden;
-  border-top: 6px solid #1A2EFF;
-  border-left: 6px solid #1A2EFF;
-  border-bottom: 6px solid #1A2EFF;
-  border-right: 6px solid #1A2EFF;
+  border-top: 4px solid #1A2EFF;
+  border-left: 4px solid #1A2EFF;
+  border-bottom: 4px solid #1A2EFF;
+  border-right: 4px solid #1A2EFF;
   z-index: 97;
 }
 
 
 
 .pupil {
-  width: 70px;
-  height: 90px;
+  width: 47px;
+  height: 75px;
   background-image: url("pupil.png");
+  background-size: 75px 75px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -118,8 +121,34 @@ transform-origin: 100% 30%;
   z-index: 98;
 }
 
+.circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    background-color: black;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999999; /* so that it stays on top of all other elements */
+  }
 
+  
+  .bottombutton {
+    position: fixed;
+  
+    bottom: 0;
+    left: 0;
+    margin: 16px;
+    transition: all .2s ease-in-out;  /* Adjust the margin as needed */
+  }
+ 
+    
+    .bottombutton:hover { 
+        transform: scale(1.2);
+        
 
+    }
 @keyframes color-change {
 
     
