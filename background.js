@@ -1,7 +1,7 @@
 // sketch.js
 const friction = 0.65;
 const resiliency = -0.025;
-const mousePower = 0.12;
+const mousePower = 0.07;
 const blockSize = 30;
 let main = [];
 let rows = [];
@@ -26,7 +26,7 @@ function draw() {
   });
 
   // Set the color of the grid to #1A2EFF
-  stroke(26, 46, 255, 70);
+  stroke(26, 46, 255, 55);
   noFill();
 
   rows.forEach((arr) => {

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fading Headers One by One</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .fadeHeader {
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+    .fadeHeader:hover {
+      transform: perspective(200px) rotateY(10deg) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 class="fadeHeader">Header 1</h2>
+  <h2 class="fadeHeader">Header 2</h2>
+  <h2 class="fadeHeader">Header 3</h2>
+  <!-- Add more headers as needed -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all elements with the class "fadeHeader"
+      var fadeHeaders = document.querySelectorAll('.fadeHeader');
+
+      // Function to apply fade-in effect to each header
+      function fadeInHeader(header, index) {
+        setTimeout(function() {
+          header.style.opacity = '1';
+          header.style.transform = 'translateY(0)';
+        }, 1000 * index); // Adjust the delay as needed for each header
+      }
+
+      // Iterate through each header and apply the fade-in effect
+      fadeHeaders.forEach(function(header, index) {
+        fadeInHeader(header, index);
+      });
+    });
+  </script>
+
+</body>
+</html>

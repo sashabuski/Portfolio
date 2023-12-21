@@ -32,48 +32,79 @@ header h1 {
    
 }
 
-.project h2 {
+.menu-item {
     margin-right: 0px;
     font-family: 'Neu', sans-serif;
     color: #EFEFEF;
     text-align: right;
-   
+   color: #EFEFEF;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #1A2EFF;
     font-size: 12vw;
     line-height: 35px;
-  
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.menu-item-1 {
+     /* Blue */
+    animation-delay: 0.2s; /* Delay for the first menu item */
+}
+
+.menu-item-2 {
+   
+    animation-delay: 0.4s; /* Delay for the second menu item */
+}
+
+.menu-item-3 {
     
+    animation-delay: 0.6s; /* Delay for the third menu item */
 }
-.project h2:hover{
-animation: color-change .2s forwards;
+
+.menu-item-4 {
+   
+    animation-delay: 0.8s; /* Delay for the second menu item */
 }
+
+.menu-item-5 {
+  
+    animation-delay: 1.0s; /* Delay for the third menu item */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        
+    }
+}
+
+/* Hover effect */
+.menu-item:hover {
+    transform-origin: 100% 50%;
+    transform:  perspective(300px) rotateY(1deg) !important; /* Scale up to 120% on hover */
+    color: #1A2EFF; /* Change text color on hover (you can customize the color) */
+}
+
 .project con{
 float: right;
 
-padding-right: 80px;
-transform: perspective(700px) rotateY(-20deg);
+padding-right: 40px;
+transform: perspective(800px) rotateY(-20deg);
 transform-origin: 100% 30%;
 }
 
-
-
-.grow { 
-    transition: all .2s ease-in-out; 
-    }
-    
-.grow:hover { 
-    transform-origin: 100% 50%;
-    transform:  perspective(400px) rotateY(1deg) ;
-
-}
 
 .eyes {
   position: fixed;
   display: flex;
   justify-content: left;
   margin-left: 103px;
-  top: 230px;
+  top: 235px;
   transform: translateY(-50%);
   width: 100%;
   text-align: center;
@@ -149,12 +180,8 @@ transform-origin: 100% 30%;
         
 
     }
-@keyframes color-change {
 
-    
-    100% { color: #1A2EFF; }
- }
-    
+
 
 /* Add this at the beginning of your styles.css file */
 

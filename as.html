@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Menu</title>
+    <style>
+        .menu-item {
+            margin: 10px;
+            display: inline-block;
+            font-size: 50px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .menu-item-1 {
+            color: #3498db; /* Blue */
+            animation-delay: 0.5s; /* Delay for the first menu item */
+        }
+
+        .menu-item-2 {
+            color: #e74c3c; /* Red */
+            animation-delay: 1s; /* Delay for the second menu item */
+        }
+
+        .menu-item-3 {
+            color: #2ecc71; /* Green */
+            animation-delay: 1.5s; /* Delay for the third menu item */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                  transform: translateY(0px);
+            }
+        }
+      
+        /* Hover effect */
+        .menu-item:hover {
+            transform-origin: 100% 50%;
+            transform: perspective(200px) rotateY(10deg); /* Perspective rotate on hover */
+            color: #1A2EFF; /* Change text color on hover (you can customize the color) */
+        }
+    </style>
+</head>
+<body>
+    <h2 class="menu-item menu-item-1">Menu Item 1</h2>
+    <h2 class="menu-item menu-item-2">Menu Item 2</h2>
+    <h2 class="menu-item menu-item-3">Menu Item 3</h2>
+</body>
+</html>
