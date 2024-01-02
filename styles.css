@@ -2,10 +2,12 @@ body {
     margin: 0;
  
     background-color: #EFEFEF;
+    
   }
   canvas {
     position: fixed !important;
  }
+ 
 header {
     font-family: 'Neu', sans-serif; /* Use the custom font in your styles */
     /* Other styles for the body */
@@ -20,10 +22,17 @@ header h1 {
     padding-top: 10px; /* Remove top and bottom margin to move text to the top-left corner */
     font-size: 2.5vw; /* Adjust the font size as needed */
     position: fixed;
-    
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    line-height: 3rem;
     /* Add the text stroke effect */
     color: #1A2EFF; /* Set text color to transparent to avoid double fill */
 }
+
+.char {
+  transform: translateY(115px);
+  
+}
+
 
 .container {
     max-width: 1960px;
@@ -33,61 +42,36 @@ header h1 {
 }
 
 .menu-item {
-    margin-right: 0px;
+  margin-top: 5vw; 
+  margin-right: 0px;
     font-family: 'Neu', sans-serif;
-    color: #EFEFEF;
+    color: rgba(26, 46, 255, 0.03);
     text-align: right;
-   color: #EFEFEF;
-    -webkit-text-stroke-width: 2px;
+  
+    -webkit-text-stroke-width: 0.2vw;
     -webkit-text-stroke-color: #1A2EFF;
     font-size: 12vw;
     line-height: 35px;
     opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.menu-item-1 {
-     /* Blue */
-    animation-delay: 0.2s; /* Delay for the first menu item */
-}
-
-.menu-item-2 {
+    transform: translateY(-100px);
+      transition: opacity 1.3s ease-in-out, transform 0.5s ease-in-out, color 0.3s ease-in-out;
+      transform-origin: 100% 50%;
    
-    animation-delay: 0.4s; /* Delay for the second menu item */
 }
 
-.menu-item-3 {
-    
-    animation-delay: 0.6s; /* Delay for the third menu item */
-}
-
-.menu-item-4 {
-   
-    animation-delay: 0.8s; /* Delay for the second menu item */
-}
-
-.menu-item-5 {
-  
-    animation-delay: 1.0s; /* Delay for the third menu item */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        
-    }
+.title{
+  margin-top: 13.5vh;
+  scale: 0.5;
+  color: #1A2EFF;
+  pointer-events: none;
 }
 
 /* Hover effect */
-.menu-item:hover {
-    transform-origin: 100% 50%;
-    transform:  perspective(300px) rotateY(1deg) !important; /* Scale up to 120% on hover */
-    color: #1A2EFF; /* Change text color on hover (you can customize the color) */
+.menu-item:hover, .menu-item:focus {
+    
+    transform:  perspective(300px) rotateY(1deg) !important;
+    color: #1A2EFF;/* Scale up to 120% on hover */
+   /* Change text color on hover (you can customize the color) */
 }
 
 .project con{
@@ -97,7 +81,16 @@ padding-right: 40px;
 transform: perspective(800px) rotateY(-20deg);
 transform-origin: 100% 30%;
 }
+.project titlecon{
+  float: right;
+  padding-top: 10px;
+  padding-right: 40px;
+  
+  }
 
+  .noHover{
+    pointer-events: none;
+}
 
 .eyes {
   position: fixed;
@@ -108,6 +101,8 @@ transform-origin: 100% 30%;
   transform: translateY(-50%);
   width: 100%;
   text-align: center;
+  opacity: 0;
+  animation: slideIn 0.5s ease-out forwards;
 }
 
 .eye-container {
@@ -138,7 +133,15 @@ transform-origin: 100% 30%;
 }
 
 
-
+.projectcontainer{
+position: absolute;
+max-width: 50vw;
+margin-top: 20vh;
+margin-left: 20vw;
+width: 10vw;
+height: 10vw;
+border: 3px solid lime;
+}
 .pupil {
   width: 47px;
   height: 75px;
@@ -152,26 +155,34 @@ transform-origin: 100% 30%;
   z-index: 98;
 }
 
-.circle {
-    height: 24px;
-    width: 24px;
-    border-radius: 24px;
-    background-color: black;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 99999999; /* so that it stays on top of all other elements */
-  }
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  display: block;
+  border-radius: 0;
+  mix-blend-mode:normal;
+  top: 0;
+  left: 0;
+  z-index: 9999999999999999;  
+}
 
+.circle {
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 20px;
+    background-color: #fff;
+}
   
   .bottombutton {
     position: fixed;
-  
+  z-index: 1000;
     bottom: 0;
     left: 0;
     margin: 16px;
-    transition: all .2s ease-in-out;  /* Adjust the margin as needed */
+    transition: all .2s ease-in-out;
+    animation: elasticScale 0.5s ease-out;  /* Adjust the margin as needed */
   }
  
     
@@ -181,7 +192,26 @@ transform-origin: 100% 30%;
 
     }
 
+    @keyframes slideIn {
+      from {
+          opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+  }
 
+  @keyframes elasticScale {
+    0% {
+        transform: scale(0);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 
 /* Add this at the beginning of your styles.css file */
 
