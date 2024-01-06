@@ -11,6 +11,8 @@
     <script src="background.js" style="position: fixed;"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
@@ -222,9 +224,11 @@ return timeline;
 
     const animationEnter = (container) => {
    
-   
-   
-      return gsap.from(container, { delay: 1,autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
+      const timeline = gsap.timeline();
+      
+      console.log("CUM"+container.childNodes);
+      timeline.from(container, { delay: 1,autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
+      return timeline;
 }
 
 const animationLeave = (data) => {
@@ -252,19 +256,19 @@ let x =0;
 
 switch (data.trigger.id) {
   case "1":
-  x =0;
+  x =-0.5;
   break;
   case "2":
-  x =-8.5;
+  x =-9;
   break;
   case "3":
-  x =-17;
+  x =-17.5;
   break;
   case "4":
-  x =-25.5;
+  x =-26;
   break;
   case "5":
-  x =-34;
+  x =-34.5;
   break;
   
 }
@@ -275,8 +279,10 @@ console.log(x);
      // timeline.to(arrayOfDivs, { autoAlpha: 0,stagger:0.05, duration: 0.25,  ease: 'none' });
       timeline.to(arrayOfDivs, {  autoAlpha: 0,stagger:0.2, duration: 0.5,  ease: 'none' });
       console.log(data.trigger.childNodes[0]);
+     
       setTimeout(() => {
-  data.trigger.childNodes[0].style.transform = `translateY(${x}vw)`;
+        data.trigger.childNodes[0].style.transition = 'transform 0.5s ease-out';
+        data.trigger.childNodes[0].style.transform = `translateY(${x}vw)`;
 }, 600);
    
   // 
@@ -295,6 +301,7 @@ barba.init({
             enter: ({next}) => {
                 console.log('entering');
                 animationEnter(next.container);
+                initScroll();
             }
         }
     ]
