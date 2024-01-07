@@ -17,8 +17,8 @@
 
 <body>
 
-  <header>
-      <div class="container">
+  <header style="padding-top: 0vw;">
+      <div class="container" >
           <h1 id="name" style="padding-top: 0vw;">SASHA</h1>
           <h1 id="name1" style="padding-top: 3vw;">BUSKIN</h1>
       </div>
@@ -37,17 +37,7 @@
       </div>
   </div>
 
-  <div class="bottombutton" style="margin-left: 40px;">
-      <a href="#">
-          <img src="gitty.png" style="width:3vw;" alt="Button Image">
-      </a>
-  </div>
-
-  <div class="bottombutton" style="margin-left: 100px;">
-      <a href="#">
-          <img src="in.png" style="width:3vw;" alt="Button Image">
-      </a>
-  </div>
+  
 
   <div class="cursor">
   
@@ -77,7 +67,7 @@
 <main data-barba="wrapper">
   <!-- Unchanged Content -->
   <section data-barba="container" style="position: fixed; width: 80vw; float: right;">
- 
+   
     <a href="Tattoomi.html" id= "1" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item" style="margin-top: 6vw;" >Tattoomi</h2></a>
               <a href="NeuWord.html" id= "2" style="text-decoration:none;" onclick="titlize(this)"><h2 class="menu-item" style="margin-top: 14.5vw;">NeuWord</h2></a>
               <a href="PinguTopia.html" id= "3" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item"style="margin-top: 23vw;">PinguTopia</h2></a>
@@ -85,7 +75,17 @@
               <a href="WWTBAM.html" id= "5" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item"style="margin-top: 40vw;">WWtBaM</h2></a>
               
    
-
+              <div class="bottombutton" style="margin-left: 40px;">
+                <a href="#">
+                    <img src="gitty.png" style="width:50px;" alt="Button Image">
+                </a>
+            </div>
+          
+            <div class="bottombutton" style="margin-left: 100px;">
+                <a href="#">
+                    <img src="in.png" style="width:50px;" alt="Button Image">
+                </a>
+            </div>
 </section>
 </main>
 <!-- Unchanged Content -->
@@ -280,6 +280,13 @@ console.log(x);
       timeline.to(arrayOfDivs, {  autoAlpha: 0,stagger:0.2, duration: 0.5,  ease: 'none' });
       console.log(data.trigger.childNodes[0]);
      
+      data.current.container.childNodes[11].style.transition = 'transform 0.5s ease-inout';
+data.current.container.childNodes[11].style.transform = `translateY(-60px)`;
+
+setTimeout(() => {
+  data.current.container.childNodes[13].style.transition = 'transform 0.5s ease-inout';
+  data.current.container.childNodes[13].style.transform = `translateX(-60px)`;
+}, 50);
       setTimeout(() => {
         data.trigger.childNodes[0].style.transition = 'transform 0.5s ease-out';
         data.trigger.childNodes[0].style.transform = `translateY(${x}vw)`;
