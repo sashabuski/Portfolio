@@ -141,7 +141,26 @@ function initScroll(){
       trigger:image, 
   
       start: 'top 80%',
-                  end: 'top 50%',
+      end: 'top 50%',        
+      toggleActions: 'play play reverse reverse'// start the animation when ".box" enters the viewport (once)
+   }
+  
+  })
+
+  
+  const tit = document.querySelectorAll('.title');
+  gsap.to(tit, 
+    
+     {opacity:0,
+    duration: 0.3,
+   
+    scrollTrigger: {
+    
+      trigger:tit, 
+  
+      start: () => 'top -' + window.innerWidth*0.1,
+                 
+                  markers:true,
       toggleActions: 'play play reverse reverse'// start the animation when ".box" enters the viewport (once)
    }
   
