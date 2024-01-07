@@ -160,7 +160,7 @@ function initScroll(){
   
       start: () => 'top -' + window.innerWidth*0.1,
                  
-                  markers:true,
+                 
       toggleActions: 'play play reverse reverse'// start the animation when ".box" enters the viewport (once)
    }
   
