@@ -18,14 +18,14 @@
 <body>
 
   <header style="padding-top: 0vw;">
-      <div class="container" >
+      <div class="container" style="margin-top: -10px;">
           <h1 id="name" style="padding-top: 0vw;">SASHA</h1>
           <h1 id="name1" style="padding-top: 3vw;">BUSKIN</h1>
       </div>
   </header>
 
   <div class="eyes">
-      <div class="eye-container">
+      <div class="eye-container" >
           <div class="eye">
               <div class="pupil"></div>
           </div>
@@ -66,22 +66,27 @@
 
 <main data-barba="wrapper">
   <!-- Unchanged Content -->
-  <section data-barba="container" style="position: fixed; width: 80vw; float: right;">
+  <section data-barba="container" style="position: absolute; width: 99vw; float: right;">
    
-    <a href="Tattoomi.html" id= "1" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item" style="margin-top: 6vw;" >Tattoomi</h2></a>
-              <a href="NeuWord.html" id= "2" style="text-decoration:none;" onclick="titlize(this)"><h2 class="menu-item" style="margin-top: 14.5vw;">NeuWord</h2></a>
-              <a href="PinguTopia.html" id= "3" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item"style="margin-top: 23vw;">PinguTopia</h2></a>
-              <a href="HopIn.html" id= "4" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item"style="margin-top: 31.5vw;">HopIn</h2></a>
-              <a href="WWTBAM.html" id= "5" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item"style="margin-top: 40vw;">WWtBaM</h2></a>
-              
+    <div class="project">
+      <con style="margin-top: calc(200px - 10vw);">
+          <div class="nav">
+              <a href="Tattoomi.html" id= "1" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item">Tattoomi</h2></a>
+              <a href="NeuWord.html" id= "2" style="text-decoration:none;" onclick="titlize(this)"><h2 class="menu-item">NeuWord</h2></a>
+              <a href="PinguTopia.html" id= "3" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item">PinguTopia</h2></a>
+              <a href="HopIn.html" id= "4" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item">HopIn</h2></a>
+              <a href="WWTBAM.html" id= "5" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item">WWTBAM</h2></a>
+          </div>
+      </con>
+  </div>         
    
-              <div class="bottombutton" style="margin-left: 40px;">
+              <div class="bottombutton" style="margin-left: 20px;">
                 <a href="#">
                     <img src="gitty.png" style="width:50px;" alt="Button Image">
                 </a>
             </div>
           
-            <div class="bottombutton" style="margin-left: 100px;">
+            <div class="bottombutton" style="margin-left: 80px;">
                 <a href="#">
                     <img src="in.png" style="width:50px;" alt="Button Image">
                 </a>
@@ -230,15 +235,17 @@ return timeline;
       timeline.from(container, { delay: 1,autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
       return timeline;
 }
-
+ 
 const animationLeave = (data) => {
-    
+  console.log(data.current.container.childNodes);
+  
+  /* */
   var arrayOfDivs = [];
   
-  console.log(data.current.container.childNodes);
+  
  
- for(let i=1;i<11;i +=2){
-  var head = data.current.container.childNodes[i];
+ for(let i=1;i<10;i +=2){
+  var head = data.current.container.childNodes[1].childNodes[1].childNodes[1].childNodes[i];
  console.log("HEAD "+i+head);
   
  
@@ -256,43 +263,43 @@ let x =0;
 
 switch (data.trigger.id) {
   case "1":
-  x =-0.5;
+  x =-20;
   break;
   case "2":
-  x =-9;
+  x =-34.5;
   break;
   case "3":
-  x =-17.5;
+  x =-49;
   break;
   case "4":
-  x =-26;
+  x =-63.5;
   break;
   case "5":
-  x =-34.5;
+  x =-78;
   break;
   
 }
 
 console.log(x);
-      //timeline.to(data.current.container.childNodes[1].childNodes[1], {scale: 0.5, perspective: 'none',rotateY: 0,duration: 0.4, ease: 'power2.inOut' });
+      timeline.to(data.current.container.childNodes[1].childNodes[1], {scale: 0.5, perspective: 'none',rotateY: 0,duration: 0.4, ease: 'power2.inOut' });
      // timeline.to(container.childNodes[1].childNodes[1], {rotateY: 0,duration: 0.5, ease: 'power2.inOut' });
      // timeline.to(arrayOfDivs, { autoAlpha: 0,stagger:0.05, duration: 0.25,  ease: 'none' });
       timeline.to(arrayOfDivs, {  autoAlpha: 0,stagger:0.2, duration: 0.5,  ease: 'none' });
       console.log(data.trigger.childNodes[0]);
      
-      data.current.container.childNodes[11].style.transition = 'transform 0.5s ease-inout';
-data.current.container.childNodes[11].style.transform = `translateY(-60px)`;
+      data.current.container.childNodes[3].style.transition = 'transform 0.5s ease-inout';
+data.current.container.childNodes[3].style.transform = `translateY(-60px)`;
 
 setTimeout(() => {
-  data.current.container.childNodes[13].style.transition = 'transform 0.5s ease-inout';
-  data.current.container.childNodes[13].style.transform = `translateX(-60px)`;
+  data.current.container.childNodes[5].style.transition = 'transform 0.5s ease-inout';
+  data.current.container.childNodes[5].style.transform = `translateX(-60px)`;
 }, 50);
       setTimeout(() => {
         data.trigger.childNodes[0].style.transition = 'transform 0.5s ease-out';
-        data.trigger.childNodes[0].style.transform = `translateY(${x}vw)`;
+        data.trigger.childNodes[0].style.transform = `translateY(calc(-200px + ${x}vw))`;
 }, 600);
-   
-  // 
+
+  
   
   
   timeline.to(data.current.container, { autoAlpha: 0, duration: 10000, clearProps: 'all', ease: 'none'});
