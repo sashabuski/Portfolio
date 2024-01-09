@@ -8,15 +8,17 @@
     <title>Sasha Buskin</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-    <script src="background.js" style="position: fixed;"></script>
+<!-- <script src="background.js" style="position: fixed;"></script>-->
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://unpkg.com/@barba/core"></script>
-</head>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+  </head>
 
 <body>
 
   <header>
-      <div class="container">
+      <div class="container"style="margin-top: -10px;">
           <h1 id="name" style="padding-top: 0vw;">SASHA</h1>
           <h1 id="name1" style="padding-top: 3vw;">BUSKIN</h1>
       </div>
@@ -35,17 +37,7 @@
       </div>
   </div>
 
-  <div class="bottombutton" style="margin-left: 40px;">
-      <a href="#">
-          <img src="gitty.png" style="width:3vw;" alt="Button Image">
-      </a>
-  </div>
-
-  <div class="bottombutton" style="margin-left: 100px;">
-      <a href="#">
-          <img src="in.png" style="width:3vw;" alt="Button Image">
-      </a>
-  </div>
+  
 
   <div class="cursor">
   
@@ -74,17 +66,43 @@
 
 <main data-barba="wrapper">
   <!-- Unchanged Content -->
-  <section data-barba="container">
-  <div class="project">
-      <con>
-          
-              <h2 class="menu-item">HopIn</h2>
-             
-         
-      </con>
-  </div>
+  <section data-barba="container" style="position: absolute; width: 99vw; float: right;">
+ 
+      <h2 class="title" style=" float: right; margin-bottom: 0px; ">HopIn</h2>    
+   
+     
+      <div class="flex-container">
+        <img class="screenshot flex-item"  src="nw1.png" alt="nw1" style="min-width: 10vw; width: 300px; opacity: 1;">
+        <p class="descriptor reveal-type " data-bg-color="rgba(26, 46, 255, 0.3)" data-fg-color="#1A2EFF" style=" white-space: pre-wrap;  word-break: keep-all; word-wrap: normal;margin-top: 9vw; width: 32vw; font-size:calc(8px + 1.5vw);text-align: center;">Simplistic word-finding game built in<br> Unity engine using C#.</p>
+       
+      
+      </div>   
+        <div class="flex-container" style="padding-top: 0px; flex-wrap: wrap-reverse;">   
+        <p class="descriptor reveal-type " data-bg-color="rgba(26, 46, 255, 0.3)" data-fg-color="#1A2EFF" style=" word-wrap: normal;margin-top: 9vw;width: 32vw; font-size:calc(8px + 1.5vw);text-align: center; ">Solves for all possible solutions. <br>Using Dictionary API to provide definitions.<br> Learn new words!</p>
+        <img class="screenshot flex-item"  src="nw2.png" alt="nw1" style="min-width: 10vw; width: 300px; opacity: 1;">
+        </div> 
+        <div class="flex-container" style="padding-top: 0px; margin-bottom: 9vw;"> 
+        <img class="screenshot "  src="nw3.png" alt="nw1" style="min-width: 10vw; width: 300px; opacity: 1;">
+        <p class="descriptor reveal-type" data-bg-color="rgba(26, 46, 255, 0.3)" data-fg-color="#1A2EFF" style=" word-wrap: normal;margin-top: 9vw; width: 32vw; font-size:calc(8px + 1.5vw);text-align: center; ">Keeps track of personal game stats locally.</p>
+        </div>
+        <div class="bottombutton" style="margin-left: 20px; margin-bottom: 70px;">
+          <a href="#">
+              <img src="gitty.png" style="width:50px;" alt="Button Image">
+          </a>
+      </div>
+    
+      <div class="bottombutton" style="margin-left: 20px;">
+          <a href="#">
+              <img src="in.png" style="width:50px;" alt="Button Image">
+          </a>
+      </div>
 
-</section>
+
+  
+
+              <script>
+               </script>
+            </section>
 </main>
 <!-- Unchanged Content -->
 
