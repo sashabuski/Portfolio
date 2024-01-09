@@ -122,7 +122,7 @@ function initScroll(){
   
   gsap.to(cap, {
     
-     y:-60,
+     y:-30,
     duration: 4,
     ease: "power1.inOut",
     scrollTrigger: {

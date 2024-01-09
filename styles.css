@@ -1,6 +1,6 @@
 body {
     margin: 0;
- 
+ overflow: hidden;
     background-color: #EFEFEF;
     
   }
@@ -118,11 +118,11 @@ header h1 {
   text-align: center;
   opacity: 0;
   animation: slideIn 0.5s ease-out forwards;
-  scale: 1vw;
+  scale: 0.6;
   justify-content: center;
   transform-origin: 50% 0%;
-  margin-left: 55px;
-  margin-top: 170px;
+  margin-left: 43px;
+  margin-top: calc(40px + 6vw);
 }
 
 .eye-container {
