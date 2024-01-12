@@ -227,12 +227,43 @@ return timeline;
     return timeline;
     }*/
 
+  
+    const animationEnterMenu = (container) => {
+   
+   const timeline = gsap.timeline();
+   
+   console.log("CUM"+container.childNodes);
+ 
+ /*  var arrayOfDivs = [];
+  
+ 
+
+for(let i=1;i<10;i +=2){
+ var head = container.childNodes[1].childNodes[1].childNodes[1].childNodes[i];
+console.log("HEAD "+i+head);
+ 
+
+
+   arrayOfDivs.push(head);
+ 
+
+}
+timeline.to(arrayOfDivs, {  autoAlpha: 1,stagger:0.2, duration: 0.5,  ease: 'none' });   */
+timeline.to(container, { delay: 2,autoAlpha: 1, duration: 2, clearProps: 'all', ease: 'none'});
+  
+  
+   return timeline;
+}
+
+    
+  
     const animationEnter = (container) => {
    
       const timeline = gsap.timeline();
       
       console.log("CUM"+container.childNodes);
-      timeline.from(container, { delay: 1,autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
+    
+      timeline.from(container, { delay: 2,autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
      
      
       return timeline;
@@ -244,7 +275,7 @@ const animationLeave = (data) => {
   /* */
   var arrayOfDivs = [];
   
-  
+   arrayOfDivs.push(data.trigger);
  
  for(let i=1;i<10;i +=2){
   var head = data.current.container.childNodes[1].childNodes[1].childNodes[1].childNodes[i];
@@ -256,7 +287,7 @@ const animationLeave = (data) => {
   }
 
  } 
- arrayOfDivs.push(data.trigger);
+
 
  const timeline = gsap.timeline();
     
@@ -298,13 +329,13 @@ setTimeout(() => {
 }, 50);
       setTimeout(() => {
         //data.trigger.childNodes[0].style.transition = 'transform 0.5s ease-out';
-        data.trigger.childNodes[0].style.transform = `translateX(150vw)`;
+       // data.trigger.childNodes[0].style.transform = `translateX(150vw)`;
 }, 300);
 
 //data.trigger.childNodes[0].style = "opacity: 1; pointer-events: none;"
   
   
-  timeline.to(data.current.container, { autoAlpha: 0, duration: 1, clearProps: 'all', ease: 'none'});
+  timeline.to(data.current.container, {delay:1.5, autoAlpha: 0, duration: 1, clearProps: 'all', ease: 'none'});
   return timeline;
 
 }
@@ -319,10 +350,20 @@ barba.init({
                 animationEnter(next.container);
                 initScroll();
             }
-        }
+        },{
+            name: 'back',
+            priority: 1,
+            custom: ({ trigger }) => {return trigger === 'back'},
+            enter(data) {
+              animationEnterMenu(data.next.container);
+            }
+          }
     ]
 });
          </script>
+
+
+
 </body>
 
 

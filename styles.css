@@ -44,7 +44,27 @@ header h1 {
 .descriptor{
   font-family: 'Neu', sans-serif;
   color: #1A2EFF;
+  overflow-wrap: normal;
+  margin-top: 12vw;
+  margin-bottom: 12vw;
+  width: calc(100px + 25vw); 
+  font-size:calc(8px + 1.5vw);
+  text-align: center; 
+  transform: translateY(-115px) !important;
+  word-break: break-word;
+   word-wrap: break-word;
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+   -ms-word-break: break-all;
+   word-break: break-word;
+   -ms-hyphens: auto;
+   -moz-hyphens: auto;
+   -webkit-hyphens: auto;
+   hyphens: auto;
 }
+
+
+
 .menu-item {
   margin-top: 6vw; 
   margin-right: 0px;
@@ -236,6 +256,14 @@ border: 3px solid lime;
        justify-content: center;
        align-items: center;
        
+     }
+
+     .overflowWrapper{
+      border: 3px solid lime;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      position: fixed;
      }
  
      .flex-item:nth-child(2n) {
