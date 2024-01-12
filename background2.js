@@ -1,57 +1,84 @@
+let cnv;
+let bright = 99;
+var clearSpeed = 1;
+var inkhue = 0;
 
-// noise, grayscale, map, text, shape, vertex
-// Move the mouse to interact.
-// Mouse click to toggle render
+function setup() {
+  cnv = createCanvas(windowWidth, windowHeight);
+  cnv.style.zIndex = "2";
+  x = vx = mouseX;
+  y = vy = mouseY;
+  v = r = 10;
+  f = false;
 
-
-let xincr, yincr, xincr2, yincr2, dst, fp, fp2;
-const  isBlk = false;
-
-void setup() {
-  size(550, 550);
-  background(0);
-  dst = 100;
-  smooth();
-  noiseSeed(123);
+  size = 50;
+  spring = 0.6;
+  friction = 0.5;
+  splitNum = 5;
+  diff = (size / 8) * 0.9;
+  stroke(0, 10);
+  background(239,239,239);
+  framecount = 60;
 }
 
-void draw() {
-  if (isBlk) {
-    background(50);
-    stroke(200);
-    fill(200);
-  } else {
-    background(200);
-    stroke(50);
-    fill(50);
+function draw() {
+  //fs = fullscreen();
+  if (!f) {
+    f = true;
+    x = mouseX;
+    y = mouseY;
   }
-  text("X: ", 20, 30);
-  text("Y: ", 20, 45);
-  text(fp, 40, 30);
-  text(fp2, 40, 45);
-  noFill();
+  vx += (mouseX - x) * spring;
+  vy += (mouseY - y) * spring;
+  vx *= friction;
+  vy *= friction;
 
-  translate(width/2, height/2);
+  noStroke();
+  fill(255, 255, 255, 2.6);
+  rectMode(CENTER);
+  rect(width / 2, height / 2, width, height);
 
-  fp = map(mouseX, 0, width, -.05, .05);
-  fp2 = map(mouseY, 0, height, -.05, .05);
+  v += sqrt(vx * vx + vy * vy) - v;
+  v *= 0.8;
 
-  xincr += .001;
-  yincr += .001;
+  oldR = r;
+  r = size - v;
 
-  yincr2 = yincr;
-  for (float y = -dst; y <= dst; y += 5) {
-    yincr2 += fp;
-    beginShape();
-    xincr2 = xincr;
-    for (float x = -dst; x <= dst; x += 5) {
-      xincr2 += fp2;
-      vertex(x * noise(xincr2, yincr2) * 3, y * noise(xincr2, yincr2) * 3);
+  let A = random (30,100);
+  let R = 100;
+  let G = 10;
+  let B = 100;
+
+  for (let i = 0; i < splitNum; ++i) {
+    oldX = x;
+    oldY = y;
+    x += vx / splitNum;
+    y += vy / splitNum;
+    oldR += (r - oldR) / splitNum;
+    stroke( inkhue, G, B, A);
+
+    strokeWeight(oldR + diff);
+    strokeCap(ROUND);
+    line(x, y, oldX, oldY);
+
+    strokeWeight(oldR);
+    strokeCap(PROJECT);
+    line(x + diff, y + diff, oldX + diff, oldY + diff);
+
+    strokeWeight(r);
+    strokeCap(PROJECT);
+    line(x - diff * 0.5, y - diff * 0.5, oldX - diff * 0.5, oldY - diff * 0.5);
+
+    if (mouseX < width && mouseY < height ) {
+      inkhue = inkhue + 0.75;
     }
-    endShape();
   }
 }
 
-void mousePressed() {
-  isBlk = !isBlk;
+function stroke() {}
+
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  background(239,239,239);
 }

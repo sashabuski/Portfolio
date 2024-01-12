@@ -51,16 +51,9 @@ header h1 {
   font-size:calc(8px + 1.5vw);
   text-align: center; 
   transform: translateY(-115px) !important;
-  word-break: break-word;
-   word-wrap: break-word;
+ 
    overflow-wrap: break-word;
-   word-wrap: break-word;
-   -ms-word-break: break-all;
-   word-break: break-word;
-   -ms-hyphens: auto;
-   -moz-hyphens: auto;
-   -webkit-hyphens: auto;
-   hyphens: auto;
+  
 }
 
 
@@ -77,8 +70,8 @@ header h1 {
     font-size: 15vw;
     line-height: 2vw;
     opacity: 0;
-    transform: translateY(-100px);
-      transition: opacity 1.3s ease-in-out, transform 0.5s ease-in-out, color 0.3s ease-in-out;
+    transform: translateY(-400px);
+      transition: opacity 2s ease-in-out, transform 1s ease-in-out, color 0.3s ease-in-out;
       transform-origin: 100% 50%;
    
 }
@@ -226,6 +219,10 @@ border: 3px solid lime;
     margin: 16px;
     transition: all .2s ease-in-out;
     animation: elasticScale 0.5s ease-out;  /* Adjust the margin as needed */
+  }
+
+  .p5Canvas{
+    z-index: -1000;
   }
  
     
