@@ -16,7 +16,7 @@ function setup() {
   friction = 0.5;
   splitNum = 5;
   diff = (size / 8) * 0.9;
-  stroke(0, 10);
+  stroke(20, 50);
   background(239,239,239);
   framecount = 60;
 }
@@ -45,9 +45,9 @@ function draw() {
   r = size - v;
 
   let A = random (30,100);
-  let R = 100;
-  let G = 10;
-  let B = 100;
+  let R = 200;
+  let G = 100;
+  let B = 120;
 
   for (let i = 0; i < splitNum; ++i) {
     oldX = x;
@@ -70,7 +70,7 @@ function draw() {
     line(x - diff * 0.5, y - diff * 0.5, oldX - diff * 0.5, oldY - diff * 0.5);
 
     if (mouseX < width && mouseY < height ) {
-      inkhue = inkhue + 0.75;
+      inkhue = inkhue + 1.75;
     }
   }
 }

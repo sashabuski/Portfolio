@@ -63,7 +63,7 @@
       <div class="circle"></div>
     </div>
 
-
+<main id="canvasMain"></main>
 <main >
   
   
@@ -242,9 +242,37 @@ return timeline;
 
   
     const animationEnterMenu = (container) => {
-   
+      console.log("animationEnterMenu");
    const timeline = gsap.timeline();
    
+   var fadeHeadersBefore = document.querySelectorAll('.menu-item');
+     
+
+     const fadeHeaders = []
+
+for(let i = fadeHeadersBefore.length - 1; i >= 0; i--) {
+const valueAtIndex = fadeHeadersBefore[i]
+
+fadeHeaders.push(valueAtIndex)
+}
+     // Function to apply fade-in effect to each header
+     function fadeInHeader(header, index) {
+       setTimeout(function() {
+         header.style.opacity = '1';
+         header.style.transform = 'translateY(0)';
+       }, 150 * index); // Adjust the delay as needed for each header
+     
+      
+       
+     }
+
+     // Iterate through each header and apply the fade-in effect
+     fadeHeaders.forEach(function(header, index) {
+       fadeInHeader(header, index);
+      
+     }
+     
+     );
    console.log("CUM"+container.childNodes);
  
  /*  var arrayOfDivs = [];
@@ -262,6 +290,10 @@ console.log("HEAD "+i+head);
 
 }
 timeline.to(arrayOfDivs, {  autoAlpha: 1,stagger:0.2, duration: 0.5,  ease: 'none' });   */
+
+
+
+
 timeline.to(container, { delay: 2,autoAlpha: 1, duration: 2, clearProps: 'all', ease: 'none'});
   
   
@@ -285,8 +317,8 @@ timeline.to(container, { delay: 2,autoAlpha: 1, duration: 2, clearProps: 'all', 
       return timeline;
 }
  
-const animationLeave = (data) => {
-  console.log(data.current.container.childNodes);
+const animationLeaveMenu = (data) => {
+  console.log("animationLeaveMenu");
   
   /* */
   var arrayOfDivs = [];
@@ -356,11 +388,25 @@ setTimeout(() => {
 
 }
 
+const animationLeavePage = (data) => {
+
+  const timeline = gsap.timeline();
+  console.log("animationLeavePage"+data.current.container.childNodes[7].childNodes[0]);
+  
+  //timeline.to(data.current.container.childNodes[7], { delay: 0,y: 60, duration: 1, clearProps: 'all', ease: 'none'});
+      timeline.to(data.current.container, { delay: 0,autoAlpha: 0, duration: 1, clearProps: 'all', ease: 'none'});
+      //timeline.from(container.childNodes[3], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
+      //timeline.from(container.childNodes[5], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
+      //timeline.from(container.childNodes[7], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
+      return timeline;
+}
+
+
 barba.init({
     transitions: [
         {sync:true,
            
-            leave: (data) => animationLeave(data),
+            leave: (data) => animationLeaveMenu(data),
             enter: ({next}) => {
                 console.log('entering');
                 animationEnter(next.container);
@@ -370,8 +416,14 @@ barba.init({
             name: 'back',
             priority: 1,
             custom: ({ trigger }) => {return trigger === 'back'},
-            enter(data) {
-              animationEnterMenu(data.next.container);
+           
+            leave: (data) => animationLeavePage(data),
+            enter: ({next}) => {
+           
+              console.log('BACKBACK');
+             
+              animationEnterMenu(next.container);
+            
             }
           }
     ]

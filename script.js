@@ -164,7 +164,8 @@ function initScroll(){
   gsap.to(tit, 
     
      {opacity:0,
-    duration: 0.3,
+      delay: 4,
+    duration: 0.5,
    
     scrollTrigger: {
     
