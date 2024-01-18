@@ -96,7 +96,7 @@ header h1 {
 
 /* Hover effect */
 .menu-item:hover, .menu-item:focus {
-    
+  transition:transform 0.3s ;
   transform:  perspective(300px) rotateY(1deg) !important;
     color: #1A2EFF;/* Scale up to 120% on hover */
    /* Change text color on hover (you can customize the color) */

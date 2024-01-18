@@ -22,6 +22,30 @@ function setup() {
 }
 
 function draw() {
+ 
+ 
+  let cols = width/40; // Number of columns
+  let rows = height/40; // Number of rows
+  let cellWidth = width / cols;
+  let cellHeight = height / rows;
+
+  // Set stroke properties
+  strokeWeight(1); // Set a smaller stroke weight
+  stroke(0, 0, 255, 2); // Set a blue stroke color
+
+  // Draw vertical lines
+  for (let i = 1; i < cols; i++) {
+    let x = i * cellWidth;
+    line(x, 0, x, height);
+  }
+
+  // Draw horizontal lines
+  for (let j = 1; j < rows; j++) {
+    let y = j * cellHeight;
+    line(0, y, width, y);
+  }
+ 
+ 
   //fs = fullscreen();
   if (!f) {
     f = true;
@@ -45,9 +69,9 @@ function draw() {
   r = size - v;
 
   let A = random (30,100);
-  let R = 200;
+  let R = 100;
   let G = 100;
-  let B = 120;
+  let B = 100;
 
   for (let i = 0; i < splitNum; ++i) {
     oldX = x;
