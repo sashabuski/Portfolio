@@ -24,9 +24,12 @@
           <h1 id="name" style="padding-top: 0vw;">SASHA</h1>
           <h1 id="name1" style="padding-top: 3vw;">BUSKIN</h1>
       </div>
-  </header>
+</header>
 
-  <div class="eyes">
+
+<img src="/bggg.png" style=" margin-top: 5%; margin-left: 10%; width:80%; height: 80%;position: fixed; opacity: 0.4;">
+
+<div class="eyes">
       <div class="eye-container" >
           <div class="eye">
               <div class="pupil"></div>
@@ -39,6 +42,36 @@
       </div>
   </div>
 
+  <style>
+    /* Style for the vertical line */
+    .vertical-line {
+        border-left: 2px solid #1A2EFF; /* You can adjust the thickness and color */
+        height: 100vh; /* You can adjust the height of the vertical line */
+        margin-left: 40px;
+        margin-top: 0px;
+        position: fixed;
+        z-index: -2;/* Adjust the distance between the lines */
+    }
+
+    .horizontal-line {
+      width: 100%; /* You can adjust the width of the line */
+            border-top: 2px solid #1A2EFF; /* You can adjust the thickness and color */
+            margin-top: 40px; /* Adjust the distance between the lines */
+            margin-bottom: 20px; 
+            position: fixed;
+            z-index: -2;/* Adjust the distance between the lines */
+    }
+
+    .colored-square-top {
+           top: 0px;
+           left: 0px;
+            width: 15vw; /* Set the width of the square */
+            height: 18vh; /* Set the height of the square */
+            background-color: #efefef; 
+            position: fixed;
+            z-index: -1;/* Set the background color using a hex code */
+        }
+</style>
   
 
   <div class="cursor">
@@ -154,6 +187,16 @@ for(let i = fadeHeadersBefore.length - 1; i >= 0; i--) {
             
             );
 
+
+            setTimeout(() => {
+      console.log("HAHAHAHA");
+      fadeHeaders.forEach(function(header) {
+  // Perform some action on each header element
+  header.style.pointerEvents = "all";// Change opacity as an example
+        });
+
+        
+      }, 1700);
           });
          
         </script>
@@ -271,11 +314,22 @@ fadeHeaders.push(valueAtIndex)
      // Iterate through each header and apply the fade-in effect
      fadeHeaders.forEach(function(header, index) {
        fadeInHeader(header, index);
-      
+     
      }
      
      );
-   console.log("CUM"+container.childNodes);
+     setTimeout(() => {
+      console.log("HAHAHAHA");
+      fadeHeaders.forEach(function(header) {
+  // Perform some action on each header element
+  header.style.pointerEvents = "all";// Change opacity as an example
+        });
+
+        
+      }, 1700);
+
+     
+   
  
  /*  var arrayOfDivs = [];
   
@@ -325,7 +379,7 @@ const animationLeaveMenu = (data) => {
   console.log("animationLeaveMenu");
   
   /* */
-  var arrayOfDivs = [];
+  const arrayOfDivs = [];
   
    arrayOfDivs.push(data.trigger);
  
@@ -340,7 +394,10 @@ const animationLeaveMenu = (data) => {
 
  } 
 
-
+ arrayOfDivs.forEach(function(header) {
+  // Perform some action on each header element
+  header.style.pointerEvents = "none";// Change opacity as an example
+        });
  const timeline = gsap.timeline();
     
  

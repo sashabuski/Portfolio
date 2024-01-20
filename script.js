@@ -70,7 +70,7 @@ animateCircles();
                 
 function initScroll(){
   gsap.registerPlugin(ScrollTrigger)
-  
+  /*
   const splitTypes = document.querySelectorAll('.reveal-type')
   
   splitTypes.forEach((char,i) => {
@@ -99,7 +99,7 @@ function initScroll(){
               }
       })
   })
-  
+  */
   
   const lenis = new Lenis()
   
@@ -122,7 +122,7 @@ function initScroll(){
   
   gsap.to(cap, {
     
-     y:-30,
+     y:-10,
     duration: 4,
     ease: "power1.inOut",
     scrollTrigger: {
