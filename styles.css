@@ -42,7 +42,7 @@ header h1 {
 }
 
 .descriptor{
-  font-family: 'Neu', sans-serif;
+  font-family: 'NeuPara', sans-serif;
   color: #1A2EFF;
   overflow-wrap: normal;
   margin-top: 12vw;
@@ -338,6 +338,10 @@ border: 3px solid lime;
 @font-face {
   font-family: 'NeuSmall';
   src: url('Fonts/NeuethingSans-RegularExpanded.ttf') format('truetype'); /* Adjust the file name and format accordingly */
+}
+@font-face {
+  font-family: 'NeuPara';
+  src: url('Fonts/NeuethingSans-BoldSemiExpanded.ttf') format('truetype'); /* Adjust the file name and format accordingly */
 }
 /* Rest of your CSS styles */
 
