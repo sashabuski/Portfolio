@@ -94,8 +94,13 @@ header h1 {
   pointer-events: none;
 }
 .subtitle{
-  margin-bottom: 0px;
-  right: 100px;
+  font-size: 2vw; /* Adjust the font size as needed */
+      color: #1A2EFF; /* Change the color if desired */
+      margin-top: 9vw; /* Adjust the margin top as needed */
+      text-align: right;
+      margin-right: 0.6vw;
+      font-family: 'NeuSmall', sans-serif;
+      pointer-events: none;
  
   
 }
@@ -329,6 +334,10 @@ border: 3px solid lime;
 @font-face {
     font-family: 'Neu';
     src: url('Fonts/NeuethingSans-ExtraBoldUltraExpanded.ttf') format('truetype'); /* Adjust the file name and format accordingly */
+}
+@font-face {
+  font-family: 'NeuSmall';
+  src: url('Fonts/NeuethingSans-RegularExpanded.ttf') format('truetype'); /* Adjust the file name and format accordingly */
 }
 /* Rest of your CSS styles */
 
