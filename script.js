@@ -149,7 +149,7 @@ function initScroll(){
       trigger:cap, 
   
       start: 'top 80%',
-      end: 'top 50%',        
+      end: 'top 90%',        
       toggleActions: 'play play reverse reverse'// start the animation when ".box" enters the viewport (once)
    }
   });
@@ -176,7 +176,7 @@ function initScroll(){
     
       trigger:image, 
   
-      start: 'top 900%',
+      start: 'top 90%',
       end: 'top 50%',        
       toggleActions: 'play play reverse reverse'// start the animation when ".box" enters the viewport (once)
    }
