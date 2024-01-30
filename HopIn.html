@@ -8,7 +8,7 @@
     <title>Sasha Buskin</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-<!-- <script src="background.js" style="position: fixed;"></script>-->
+<script src="background2.js" style="position: fixed;"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
@@ -64,31 +64,38 @@
     </div>
 
 
-<main data-barba="wrapper">
+<main >
   <!-- Unchanged Content -->
+  <section data-barba="wrapper">
   <section data-barba="container" style="position: absolute; width: 99vw; float: right;">
  
-      <h2 class="title" style=" float: right; margin-bottom: 0px; ">HopIn</h2>    
-      <h2 class="subtitle" style="margin-top: 11vw;">2021/COURSE/GROUP PROJECT</h2> 
+    <h2 class="title" id="title" style=" position: fixed; float: right; margin-bottom: 0px; ">HOP.IN</h2>    
+      <h2 class="subtitle" id = "subtitle" style=" position: fixed;right: 0;">2022/COURSE/GROUP PROJECT</h2> 
      
-      <div class="flex-container" style="padding-top: 40px;">
-        <img class="screenshot flex-item"  src="nw1.png" alt="nw1" style="min-width: 10vw; width: 300px; opacity: 1;">
-        <p class="descriptor reveal-type " data-bg-color="rgba(26, 46, 255, 0.3)" data-fg-color="#1A2EFF" style=" white-space: pre-wrap;  word-break: keep-all; word-wrap: normal;margin-top: 9vw; width: 32vw; font-size:calc(8px + 1.5vw);text-align: center;">Simplistic word-finding game built in<br> Unity engine using C#.</p>
-       
-      
+      <div class="flex-container" style="padding-top: calc(10vw + 100px);">
+        <img class="screenshot flex-item"  src="res/pt1.png" alt="nw1" style="min-width: 10vw; width: 300px; opacity: 1;">
+        <p class="descriptor reveal-type " style="  overflow-wrap: break-word;" data-bg-color="rgba(26, 46, 255, 0.3)" data-fg-color="#1A2EFF">Simplistic word-finding game built in<br> Unity engine using C#.</p> 
       </div>   
-        <div class="flex-container" style="padding-top: 0px; flex-wrap: wrap-reverse;">   
-        <p class="descriptor reveal-type " data-bg-color="rgba(26, 46, 255, 0.3)" data-fg-color="#1A2EFF" style=" word-wrap: normal;margin-top: 9vw;width: 32vw; font-size:calc(8px + 1.5vw);text-align: center; ">Solves for all possible solutions. <br>Using Dictionary API to provide definitions.<br> Learn new words!</p>
-        <img class="screenshot flex-item"  src="nw2.png" alt="nw1" style="min-width: 10vw; width: 300px; opacity: 1;">
-        </div> 
-        <div class="flex-container" style="padding-top: 0px; margin-bottom: 9vw;"> 
-        <img class="screenshot "  src="nw3.png" alt="nw1" style="min-width: 10vw; width: 300px; opacity: 1;">
-        <p class="descriptor reveal-type" data-bg-color="rgba(26, 46, 255, 0.3)" data-fg-color="#1A2EFF" style=" word-wrap: normal;margin-top: 9vw; width: 32vw; font-size:calc(8px + 1.5vw);text-align: center; ">Keeps track of personal game stats locally.</p>
-        </div>
-        <div class="bottombutton" style="margin-left: 20px; margin-bottom: 70px;">
-          <a href="#">
-              <img src="gitty.png" style="width:50px;" alt="Button Image">
-          </a>
+      <div class="flex-container" style="padding-top: 0px; flex-wrap: wrap-reverse;">   
+        <p class="descriptor reveal-type " data-bg-color="rgba(26, 46, 255, 0.3)" data-fg-color="#1A2EFF" >Swipe paths through adjacent letter bubbles to find words and score points! </p>
+        <img class="screenshot flex-item"  src="res/pt2.png" alt="nw1" style="max-height: 600px;  min-width: 10vw; width: 300px; opacity: 1;">
+      </div> 
+      <div class="flex-container" style="padding-top: 0px; "> 
+        <img class="screenshot flex-item"  src="res/pt3.png" alt="nw1" style="max-height: 600px;min-width: 10vw; width: 300px; opacity: 1;">
+        <p class="descriptor reveal-type" data-bg-color="rgba(26, 46, 255, 0.3)" data-fg-color="#1A2EFF" >Solves for all possible solutions. <br>Using Dictionary API to provide definitions.<br> Learn new words!</p>
+      </div>
+      <div class="flex-container" style="padding-top: 0px; flex-wrap: wrap-reverse; margin-bottom: 9vw;"> 
+        
+        <p class="descriptor reveal-type" data-bg-color="rgba(26, 46, 255, 0.3)" data-fg-color="#1A2EFF" >Keeps track of personal game stats locally.</p>
+        <img class="screenshot flex-item"  src="res/pt4.png" alt="nw1" style="min-width: 10vw; width: 300px; opacity: 1;">
+       
+      </div>
+      
+      
+      <div class="bottombutton" style="margin-left: 20px; margin-bottom: 70px;">
+        <a href="#">
+            <img src="gitty.png" style="width:50px;" alt="Button Image">
+        </a>
       </div>
     
       <div class="bottombutton" style="margin-left: 20px;">
@@ -100,9 +107,9 @@
 
   
 
-              <script>
-               </script>
+             
             </section>
+          </section>
 </main>
 <!-- Unchanged Content -->
 
@@ -143,7 +150,7 @@
          
         </script>
 
-        
+       
          
          <script src="https://unpkg.com/@barba/core"></script>
          <script>

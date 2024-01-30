@@ -70,6 +70,21 @@ animateCircles();
                 
 function initScroll(){
   gsap.registerPlugin(ScrollTrigger)
+  const lenis = new Lenis()
+  
+  lenis.on('scroll', (e) => {
+  
+  })
+  
+  function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+  }
+  
+  requestAnimationFrame(raf)
+  
+  
+  
   /*
   const splitTypes = document.querySelectorAll('.reveal-type')
   
@@ -99,25 +114,12 @@ function initScroll(){
               }
       })
   })
+
   */
-  
-  const lenis = new Lenis()
-  
-  lenis.on('scroll', (e) => {
-  console.log(e)
-  })
-  
-  function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-  }
-  
-  requestAnimationFrame(raf)
-  
   
   const captions = document.querySelectorAll('.descriptor')
   
-  /**/captions.forEach((cap,i) => {
+  captions.forEach((cap,i) => {
   
   
   gsap.to(cap, {
@@ -134,7 +136,29 @@ function initScroll(){
       toggleActions: 'play play reverse reverse'// start the animation when ".box" enters the viewport (once)
    }
   });
+
+  gsap.fromTo(cap, 
+    {
+      opacity:0,
+    },
+     {opacity:1,
+    duration: 1,
+    ease: "power1.Out",
+    scrollTrigger: {
+    
+      trigger:cap, 
+  
+      start: 'top 80%',
+      end: 'top 50%',        
+      toggleActions: 'play play reverse reverse'// start the animation when ".box" enters the viewport (once)
+   }
+  });
+
+  
   })
+
+
+  
   
   const images = document.querySelectorAll('.screenshot')
   
@@ -146,13 +170,13 @@ function initScroll(){
       opacity:0,
     },
      {opacity:1,
-    duration: 2,
+    duration: 1,
     ease: "power1.Out",
     scrollTrigger: {
     
       trigger:image, 
   
-      start: 'top 80%',
+      start: 'top 900%',
       end: 'top 50%',        
       toggleActions: 'play play reverse reverse'// start the animation when ".box" enters the viewport (once)
    }
@@ -160,25 +184,28 @@ function initScroll(){
   })
 
   
-  const tit = document.querySelectorAll('.title');
-  gsap.to(tit, 
-    
-     {opacity:0,
-      delay: 4,
-    duration: 0.5,
-   
-    scrollTrigger: {
-    
-      trigger:tit, 
-  
-      start: () => 'top -' + window.innerWidth*0.1,
-                 
-                 
-      toggleActions: 'play play reverse reverse'// start the animation when ".box" enters the viewport (once)
-   }
-  
-  })
+
   })
   
-}
-initScroll();
+}  
+initScroll();  
+
+window.addEventListener("scroll", function() {
+  // Get the current scroll position
+  var scrollPosition = window.scrollY;
+console.log("scrollposition: "+scrollPosition);
+  // Map the scroll position to an opacity value between 0 and 1
+  var opacity = 1 - scrollPosition / 150;
+  var opacity2 = 1 - scrollPosition / 100;
+  // Ensure that the opacity is within the valid range [0, 1]
+  opacity = Math.max(0, Math.min(1, opacity));
+
+      opacity2 = Math.max(0, Math.min(1, opacity2));
+ 
+  // Set the opacity of the div
+  document.getElementById("title").style.opacity = opacity;
+  document.getElementById("subtitle").style.opacity = opacity2;
+});
+
+
+

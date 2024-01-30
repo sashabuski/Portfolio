@@ -17,6 +17,7 @@
 
 <body>
 
+  <div class="scroll-watcher"></div>
   <header>
       <div class="container"style="margin-top: -10px;">
           <h1 id="name" style="padding-top: 0vw;">SASHA</h1>
@@ -69,15 +70,15 @@
   <section data-barba="wrapper">
   <section data-barba="container" style="position: absolute; width: 99vw; float: right;">
  
-      <h2 class="title" style=" float: right; margin-bottom: 0px; ">NeuWord</h2>    
-      <h2 class="subtitle"">2023/PERSONAL/SOLO PROJECT</h2>   
+      <h2 class="title" id="title" style=" position: fixed; float: right; margin-bottom: 0px; ">NEUWORD</h2>    
+      <h2 class="subtitle" id = "subtitle" style=" position: fixed;right: 0; top: 0;">2023/PERSONAL/SOLO PROJECT</h2>   
      
-      <div class="flex-container" style="padding-top: 40px;">
-        <img class="screenshot flex-item"  src="res/nw1.png" alt="nw1" style="margin-top: 0px; min-width: 10vw; width: 300px; opacity: 1;">
+      <div class="flex-container" style="padding-top: calc(10vw + 100px);">
+        <img class="screenshot flex-item"  src="res/nw1.png" alt="nw1" style="z-index: 1000;margin-top: 0px; min-width: 10vw; width: 300px; opacity: 1;">
         <p class="descriptor reveal-type " style="  overflow-wrap: break-word;" data-bg-color="rgba(26, 46, 255, 0.3)" data-fg-color="#1A2EFF">Simplistic word-finding game built in<br> Unity engine using C#.</p> 
       </div>   
       <div class="flex-container" style="padding-top: 0px; flex-wrap: wrap-reverse;">   
-        <p class="descriptor reveal-type " data-bg-color="rgba(26, 46, 255, 0.3)" data-fg-color="#1A2EFF" >Swipe paths through adjacent letter bubbles to find words and score points! </p>
+        <p class="descriptor reveal-type " data-bg-color="rgba(26, 46, 255, 0.3)" data-fg-color="#1A2EFF" style="  text-align: right;">Swipe paths through adjacent letter bubbles to find words and score points! </p>
         <img class="screenshot flex-item"  src="res/nw2.png" alt="nw1" style="max-height: 600px;  min-width: 10vw; width: 300px; opacity: 1;">
       </div> 
       <div class="flex-container" style="padding-top: 0px; "> 
@@ -86,7 +87,7 @@
       </div>
       <div class="flex-container" style="padding-top: 0px; flex-wrap: wrap-reverse; margin-bottom: 9vw;"> 
         
-        <p class="descriptor reveal-type" data-bg-color="rgba(26, 46, 255, 0.3)" data-fg-color="#1A2EFF" >Keeps track of personal game stats locally.</p>
+        <p class="descriptor reveal-type" data-bg-color="rgba(26, 46, 255, 0.3)" data-fg-color="#1A2EFF" style="  text-align: right;">Keeps track of personal game stats locally.</p>
         <img class="screenshot flex-item"  src="res/nw4.png" alt="nw1" style="min-width: 10vw; width: 300px; opacity: 1;">
        
       </div>
