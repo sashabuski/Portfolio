@@ -119,13 +119,13 @@
   </div>         
    
               <div class="bottombutton" style="margin-left: 20px;">
-                <a href="#">
+                <a href="https://github.com/sashabuski">
                     <img src="gitty.png" style="width:50px;" alt="Button Image">
                 </a>
             </div>
           
             <div class="bottombutton" style="margin-left: 80px;">
-                <a href="#">
+              <a href="https://www.linkedin.com/in/sasha-buskin-3690b1249/">
                     <img src="in.png" style="width:50px;" alt="Button Image">
                 </a>
             </div>
@@ -152,6 +152,28 @@ function titlize(clickedElement) {
   a.style.color = '#EFEFEF';
                a.classList.add(".title");
                a.classList.add(".nohover");
+
+
+                 /* */
+  const arrayOfDivs = [];
+  
+   arrayOfDivs.push(data.trigger);
+ 
+ for(let i=1;i<10;i +=2){
+  var head = data.current.container.childNodes[1].childNodes[1].childNodes[1].childNodes[i];
+ console.log("HEAD "+i+head);
+  
+ 
+ if(data.trigger != head){
+    arrayOfDivs.push(head);
+  }
+
+ } 
+
+ arrayOfDivs.forEach(function(header) {
+  // Perform some action on each header element
+  header.style.pointerEvents = "none";// Change opacity as an example
+        });
 }
 
 
@@ -367,6 +389,7 @@ timeline.to(container, { delay: 2,autoAlpha: 1, duration: 2, clearProps: 'all', 
     console.log(index+" "+container.childNodes[index]);
 }
      
+console.log(container.childNodes);
 
 timeline.from(container, { delay: 2,autoAlpha: 0, duration: 1, ease: 'none'});
       //timeline.from(container.childNodes[3], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
