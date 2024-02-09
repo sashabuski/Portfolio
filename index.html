@@ -109,23 +109,28 @@
     <div class="project">
       <con style="margin-top: calc(200px - 10vw);">
           <div class="nav">
-              <a href="Tattoomi.html" id= "1" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item">TATTOOMI</h2></a>
-              <a href="NeuWord.html" id= "2" style="overflow: hidden; text-decoration:none;" onclick="titlize(this)"><h2 class="menu-item">NEUWORD</h2></a>
-              <a href="PinguTopia.html" id= "3" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item">PINGUTOPIA</h2></a>
-              <a href="HopIn.html" id= "4" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item">HOPIN</h2></a>
-              <a href="WWTBAM.html" id= "5" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item">WWTBAM</h2></a>
+              <a href="Tattoomi.html" id= "1" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item">
+                <span class="year">24</span><span class="titular">TATTOOMI</span></h2></a>
+                <a href="NeuWord.html" id= "1" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item">
+                  <span class="year">23</span><span class="titular">NEUWORD</span></h2></a>
+                  <a href="PinguTopia.html" id= "1" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item">
+                    <span class="year">22</span><span class="titular">PINGUTOPIA</span></h2></a>
+                    <a href="HopIn.html" id= "1" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item">
+                      <span class="year">21</span><span class="titular">HOP.IN</span></h2></a>
+                      <a href="WWTBAM.html" id= "1" style="text-decoration:none;"onclick="titlize(this)"><h2 class="menu-item">
+                        <span class="year">20</span><span class="titular">WWTBAM</span></h2></a>
           </div>
       </con>
   </div>         
    
               <div class="bottombutton" style="margin-left: 20px;">
-                <a href="#">
+                <a href="https://github.com/sashabuski">
                     <img src="gitty.png" style="width:50px;" alt="Button Image">
                 </a>
             </div>
           
             <div class="bottombutton" style="margin-left: 80px;">
-                <a href="#">
+              <a href="https://www.linkedin.com/in/sasha-buskin-3690b1249/">
                     <img src="in.png" style="width:50px;" alt="Button Image">
                 </a>
             </div>
@@ -147,11 +152,14 @@
         <script>
 
 function titlize(clickedElement) {
-  var a = clickedElement.childNodes[0];
+ 
+  var fadeHeadersBefore = document.querySelectorAll('.menu-item');
 
-  a.style.color = '#EFEFEF';
-               a.classList.add(".title");
-               a.classList.add(".nohover");
+fadeHeadersBefore.forEach(function(menuItem) {
+    // Do something with each '.menu-item' element
+    menuItem.style.pointerEvents = "none"; // Example: Log the text content of each menu item
+    // You can perform any other actions or manipulations here
+});
 }
 
 
@@ -367,6 +375,7 @@ timeline.to(container, { delay: 2,autoAlpha: 1, duration: 2, clearProps: 'all', 
     console.log(index+" "+container.childNodes[index]);
 }
      
+console.log(container.childNodes);
 
 timeline.from(container, { delay: 2,autoAlpha: 0, duration: 1, ease: 'none'});
       //timeline.from(container.childNodes[3], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});

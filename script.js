@@ -31,7 +31,7 @@ const cursor = document.querySelector(".cursor");
 circles.forEach(function (circle, index) {
   circle.x = 0;
   circle.y = 0;
-  circle.style.backgroundColor = "#1A2EFF";
+  circle.style.backgroundColor = "#6D7BCD";
   //circle.style.backgroundColor = "#EAAF05";
 });
 
@@ -57,8 +57,8 @@ function animateCircles() {
     circle.y = y;
 
     const nextCircle = circles[index + 1] || circles[0];
-    x += (nextCircle.x - x) * 0.3;
-    y += (nextCircle.y - y) * 0.3;
+    x += (nextCircle.x - x) * 0.7;
+    y += (nextCircle.y - y) * 0.7;
   });
 
   requestAnimationFrame(animateCircles);
@@ -71,17 +71,18 @@ animateCircles();
 function initScroll(){
   gsap.registerPlugin(ScrollTrigger)
   const lenis = new Lenis()
-  
-  lenis.on('scroll', (e) => {
-  
-  })
-  
-  function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-  }
-  
-  requestAnimationFrame(raf)
+
+lenis.on('scroll', (e) => {
+  console.log(e)
+})
+
+lenis.on('scroll', ScrollTrigger.update)
+
+gsap.ticker.add((time)=>{
+  lenis.raf(time * 1000)
+})
+
+gsap.ticker.lagSmoothing(0)
   
   
   
