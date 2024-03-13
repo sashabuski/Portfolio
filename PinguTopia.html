@@ -110,52 +110,10 @@
              
             </section>
           </section>
-</main>
-<!-- Unchanged Content -->
-
-
-          <!-- Main content area -->
-          
-       
-      
-       
+</main> 
         <script src="script.js"></script>
-    
-
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            // Get all elements with the class "fadeHeader"
-            var fadeHeaders = document.querySelectorAll('.menu-item');
-     
-            // Function to apply fade-in effect to each header
-            function fadeInHeader(header, index) {
-              setTimeout(function() {
-                header.style.opacity = '1';
-                header.style.transform = 'translateY(0)';
-              }, 150 * index); // Adjust the delay as needed for each header
-            
-             
-              
-            }
+        <script src="https://unpkg.com/@barba/core"></script>
       
-            // Iterate through each header and apply the fade-in effect
-            fadeHeaders.forEach(function(header, index) {
-              fadeInHeader(header, index);
-             
-            }
-            
-            );
-
-          });
-         
-        </script>
-
-       
-         
-         <script src="https://unpkg.com/@barba/core"></script>
-         <script>
-             barba.init();
-         </script>
 </body>
 
 

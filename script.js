@@ -209,4 +209,349 @@ console.log("scrollposition: "+scrollPosition);
 });
 
 
+function titlize(clickedElement) {
+ 
+  var fadeHeadersBefore = document.querySelectorAll('.menu-item');
+
+fadeHeadersBefore.forEach(function(menuItem) {
+    // Do something with each '.menu-item' element
+    menuItem.style.pointerEvents = "none"; // Example: Log the text content of each menu item
+    // You can perform any other actions or manipulations here
+});
+}
+
+
+
+          document.addEventListener('DOMContentLoaded', function() {
+            // Get all elements with the class "fadeHeader"
+            var fadeHeadersBefore = document.querySelectorAll('.menu-item');
+     
+
+            const fadeHeaders = []
+
+for(let i = fadeHeadersBefore.length - 1; i >= 0; i--) {
+  const valueAtIndex = fadeHeadersBefore[i]
+  
+  fadeHeaders.push(valueAtIndex)
+}
+            // Function to apply fade-in effect to each header
+            function fadeInHeader(header, index) {
+              setTimeout(function() {
+                header.style.opacity = '1';
+                header.style.transform = 'translateY(0)';
+              }, 150 * index); // Adjust the delay as needed for each header
+            
+             
+              
+            }
+      
+            // Iterate through each header and apply the fade-in effect
+            fadeHeaders.forEach(function(header, index) {
+              fadeInHeader(header, index);
+             
+            }
+            
+            );
+
+
+            setTimeout(() => {
+      console.log("HAHAHAHA");
+      fadeHeaders.forEach(function(header) {
+  // Perform some action on each header element
+  header.style.pointerEvents = "all";// Change opacity as an example
+        });
+
+        
+      }, 1700);
+          });
+         
+        
+           const myText = new SplitType('#name')
+            
+              gsap.to('.char', {
+              y: 0,
+              ease: "expo.out",
+              delay: 0.7,
+              duration: 2.0
+            })
+            const myText1 = new SplitType('#name1')
+              gsap.to('.char', {
+              y: 0,
+              ease: "expo.out",
+              delay: 0.9,
+              duration: 2.0
+            })
+   
+       
+            /* barba.init({
+                transitions: [{
+                  sync:false,
+                  name: 'opacity-transition',
+              
+               leave(data) {
+               
+                 animationLeave(data.current.container, data);
+                data.current.container.childNodes[1].childNodes[1].classList.add("snapback");
+              },
+   
+               enter(data) {
+                return gsap.from(data.next.container, {
+                  delay:2,
+        opacity: 0,
+        duration:1.0
+        
+      });
+              }
+            }]
+          });
+
+
+          const animationEnter = (container, data) => {
+            const timeline = gsap.timeline();
+            console.log(container.childNodes[3]);
+            timeline.to(container.childNodes[3], { opacity: 1, duration: 0.25,  ease: 'none' });
+
+
+return timeline;
+
+
+          }
+
+
+
+
+          const animationLeave = (container, data) => {
+  
+  var arrayOfDivs = [];
+  
+ 
+ 
+ for(let i=1;i<10;i +=2){
+  var head = container.childNodes[1].childNodes[1].childNodes[1].childNodes[i];
+ 
+  if(data.trigger != head){
+    arrayOfDivs.push(head);
+  }
+
+ } 
+
+
+ const timeline = gsap.timeline();
+    
+      
+      timeline.to(container.childNodes[1].childNodes[1], {scale: 0.5, perspective: 'none',rotateY: 0,duration: 0.4, ease: 'power2.inOut' });
+     // timeline.to(container.childNodes[1].childNodes[1], {rotateY: 0,duration: 0.5, ease: 'power2.inOut' });
+      timeline.to(arrayOfDivs, { autoAlpha: 0,stagger:0.05, duration: 0.25,  ease: 'none' });
+      timeline.to(container.childNodes[1].childNodes[1], {  y: "-13.58vw",  duration: 0.4,  ease: 'power2.inOut' });
+  // 
+    return timeline;
+    }*/
+
+  
+    const animationEnterMenu = (container) => {
+      console.log("animationEnterMenu");
+   const timeline = gsap.timeline();
+   
+   var fadeHeadersBefore = document.querySelectorAll('.menu-item');
+     
+
+     const fadeHeaders = []
+
+for(let i = fadeHeadersBefore.length - 1; i >= 0; i--) {
+const valueAtIndex = fadeHeadersBefore[i]
+
+fadeHeaders.push(valueAtIndex)
+}
+     // Function to apply fade-in effect to each header
+     function fadeInHeader(header, index) {
+       setTimeout(function() {
+         header.style.opacity = '1';
+         header.style.transform = 'translateY(0)';
+       }, 150 * index); // Adjust the delay as needed for each header
+     
+      
+       
+     }
+
+     // Iterate through each header and apply the fade-in effect
+     fadeHeaders.forEach(function(header, index) {
+       fadeInHeader(header, index);
+     
+     }
+     
+     );
+     setTimeout(() => {
+      console.log("HAHAHAHA");
+      fadeHeaders.forEach(function(header) {
+  // Perform some action on each header element
+  header.style.pointerEvents = "all";// Change opacity as an example
+        });
+
+        
+      }, 1700);
+
+     
+   
+ 
+ /*  var arrayOfDivs = [];
+  
+ 
+
+for(let i=1;i<10;i +=2){
+ var head = container.childNodes[1].childNodes[1].childNodes[1].childNodes[i];
+console.log("HEAD "+i+head);
+ 
+
+
+   arrayOfDivs.push(head);
+ 
+
+}
+timeline.to(arrayOfDivs, {  autoAlpha: 1,stagger:0.2, duration: 0.5,  ease: 'none' });   */
+
+
+
+
+timeline.to(container, { delay: 2,autoAlpha: 1, duration: 2, clearProps: 'all', ease: 'none'});
+  
+  
+   return timeline;
+}
+
+    
+  
+    const animationEnter = (container) => {
+   
+      const timeline = gsap.timeline();
+      
+      console.log("CUM"+container.childNodes.values());
+      for (var index = 0; index < container.childNodes.length; index++) {
+    console.log(index+" "+container.childNodes[index]);
+}
+     
+console.log(container.childNodes);
+
+timeline.from(container, { delay: 2,autoAlpha: 0, duration: 1, ease: 'none'});
+      //timeline.from(container.childNodes[3], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
+      //timeline.from(container.childNodes[5], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
+      //timeline.from(container.childNodes[7], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
+      return timeline;
+}
+ 
+const animationLeaveMenu = (data) => {
+  console.log("animationLeaveMenu");
+  
+  /* */
+  const arrayOfDivs = [];
+  
+   arrayOfDivs.push(data.trigger);
+ 
+ for(let i=1;i<10;i +=2){
+  var head = data.current.container.childNodes[1].childNodes[1].childNodes[1].childNodes[i];
+ console.log("HEAD "+i+head);
+  
+ 
+ if(data.trigger != head){
+    arrayOfDivs.push(head);
+  }
+
+ } 
+
+ arrayOfDivs.forEach(function(header) {
+  // Perform some action on each header element
+  header.style.pointerEvents = "none";// Change opacity as an example
+        });
+ const timeline = gsap.timeline();
+    
+ 
+let x =0;
+
+switch (data.trigger.id) {
+  case "1":
+  x =-40;
+  break;
+  case "2":
+  x =-34.5;
+  break;
+  case "3":
+  x =-49;
+  break;
+  case "4":
+  x =-63.5;
+  break;
+  case "5":
+  x =-78;
+  break;
+  
+}
+/**/ 
+console.log(x);
+      timeline.to(data.current.container.childNodes[1].childNodes[1], {scale: 0.6, perspective: 'none',rotateY: 0,duration: 0.4, ease: 'power2.inOut' });
+     // timeline.to(container.childNodes[1].childNodes[1], {rotateY: 0,duration: 0.5, ease: 'power2.inOut' });
+     // timeline.to(arrayOfDivs, { autoAlpha: 0,stagger:0.05, duration: 0.25,  ease: 'none' });
+      timeline.to(arrayOfDivs, {  autoAlpha: 0,stagger:0.2, duration: 0.5,  ease: 'none' });
+      console.log(data.trigger.childNodes[0]);
+    
+      data.current.container.childNodes[3].style.transition = 'transform 0.5s ease-inout';
+data.current.container.childNodes[3].style.transform = `translateY(-55px)`;
+
+setTimeout(() => {
+  data.current.container.childNodes[5].style.transition = 'transform 0.5s ease-inout';
+  data.current.container.childNodes[5].style.transform = `translateX(-60px)`;
+}, 50);
+      setTimeout(() => {
+        //data.trigger.childNodes[0].style.transition = 'transform 0.5s ease-out';
+       // data.trigger.childNodes[0].style.transform = `translateX(150vw)`;
+}, 300);
+
+//data.trigger.childNodes[0].style = "opacity: 1; pointer-events: none;"
+  
+  
+  timeline.to(data.current.container, {delay:1.5, autoAlpha: 0, duration: 0, clearProps: 'all', ease: 'none'});
+  return timeline;
+
+}
+
+const animationLeavePage = (data) => {
+
+  const timeline = gsap.timeline();
+  console.log("animationLeavePage"+data.current.container.childNodes[7].childNodes[0]);
+  
+  //timeline.to(data.current.container.childNodes[7], { delay: 0,y: 60, duration: 1, clearProps: 'all', ease: 'none'});
+      timeline.to(data.current.container, { delay: 0,autoAlpha: 0, duration: 0.4, clearProps: 'all', ease: 'none'});
+      //timeline.from(container.childNodes[3], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
+      //timeline.from(container.childNodes[5], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
+      //timeline.from(container.childNodes[7], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
+      return timeline;
+}
+
+
+barba.init({
+    transitions: [
+        {sync:true,
+           
+            leave: (data) => animationLeaveMenu(data),
+            enter: ({next}) => {
+                console.log('entering');
+                animationEnter(next.container);
+                initScroll();
+            }
+        },{
+            name: 'back',
+            priority: 1,
+            custom: ({ trigger }) => {return trigger === 'back'},
+           
+            leave: (data) => animationLeavePage(data),
+            enter: ({next}) => {
+           
+              console.log('BACKBACK');
+             
+              animationEnterMenu(next.container);
+            
+            }
+          }
+    ]
+});
+      
+
 
