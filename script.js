@@ -498,13 +498,12 @@ data.current.container.childNodes[3].style.transform = `translateY(-55px)`;
 setTimeout(() => {
   data.current.container.childNodes[5].style.transition = 'transform 0.5s ease-inout';
   data.current.container.childNodes[5].style.transform = `translateX(-60px)`;
+    data.current.container.childNodes[7].style.transition = 'transform 0.5s ease-inout';
+  data.current.container.childNodes[7].style.transform = `translateX(-60px)`;
 }, 50);
-      setTimeout(() => {
-        //data.trigger.childNodes[0].style.transition = 'transform 0.5s ease-out';
-       // data.trigger.childNodes[0].style.transform = `translateX(150vw)`;
-}, 300);
 
-//data.trigger.childNodes[0].style = "opacity: 1; pointer-events: none;"
+console.log("co  natiner? "+data.current.container.childNodes[7]);
+
   
   
   timeline.to(data.current.container, {delay:1.5, autoAlpha: 0, duration: 0, clearProps: 'all', ease: 'none'});

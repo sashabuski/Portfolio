@@ -125,6 +125,18 @@ header h1 {
       
   
 }
+.bottomLink{
+      font-size: 12px; /* Adjust the font size as needed */
+      color: #E9E9E9; /* Change the color if desired */
+      font-weight: 100; 
+      
+    
+      font-family: 'NeuSmall', sans-serif;
+      
+      
+      
+  
+}
 
 .titular:hover, .titular:focus {
   transition:transform 0.3s ;
@@ -258,6 +270,24 @@ border: 3px solid lime;
     transition: all .2s ease-in-out;
     animation: elasticScale 0.5s ease-out;  /* Adjust the margin as needed */
   }
+  .bottomlink {
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+   
+     /* Adjust the margin as needed */
+  }
+
+  .linksContainer {
+    position: fixed;
+    bottom: 0;
+    left: 150px;
+    padding: 0px;
+    transition: all .2s ease-in-out;
+    animation: elasticScale 0.5s ease-out;
+}
+
 
   .p5Canvas{
     z-index: -1000;
