@@ -31,7 +31,7 @@ const cursor = document.querySelector(".cursor");
 circles.forEach(function (circle, index) {
   circle.x = 0;
   circle.y = 0;
-  circle.style.backgroundColor = "#6D7BCD";
+  circle.style.backgroundColor = "#EDEDED";
   //circle.style.backgroundColor = "#EAAF05";
 });
 

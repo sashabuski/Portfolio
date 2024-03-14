@@ -1,4 +1,4 @@
- let cnv;
+let cnv;
 let bright = 99;
 var clearSpeed = 1;
 var inkhue = 0;
@@ -26,7 +26,7 @@ function setup() {
   splitNum = 5;
   diff = (size / 8) * 0.9;
   stroke(20, 50);
-  background(109,123,205);
+  background(239,239,239);
   framecount = 60;
 
 	
@@ -72,7 +72,7 @@ function draw() {
 
   // Set stroke properties
   strokeWeight(1); // Set a smaller stroke weight
-  stroke(255, 255, 255, 1.5); // Set a blue stroke color
+  stroke(0, 0, 255, 2); // Set a blue stroke color
 
   // Draw vertical lines
   for (let i = 1; i < cols; i++) {
@@ -99,7 +99,7 @@ function draw() {
   vy *= friction;
 
   noStroke();
-  fill(109,123,205,2.6);
+  fill(255, 255, 255, 2.6);
   rectMode(CENTER);
   rect(width / 2, height / 2, width, height);
 
@@ -110,9 +110,9 @@ function draw() {
   r = size - v;
 
   let A = random (30,100);
-  let R = 240;
-  let G = 240;
-  let B = 240;
+  let R = 0;
+  let G = 100;
+  let B = 50;
 
   for (let i = 0; i < splitNum; ++i) {
     oldX = x;
@@ -145,7 +145,7 @@ function stroke() {}
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  background(109,123,205);
+  background(239,239,239);
 }
 
 // Daniel Shiffman
