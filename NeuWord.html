@@ -113,6 +113,32 @@
         <h2 class="bottomLink" style="margin-bottom: 5px;">resume</h2>
         <h2 class="bottomLink"style="margin-bottom: 23px;">sashabuskin12@gmail.com</h2>
     </div>
+
+    <script>
+      // Function to fade out headers when window width is below 50%
+      function fadeHeaders() {
+          var container = document.querySelector('.linksContainer');
+          var headers = container.querySelectorAll('.bottomLink');
+         
+          if (window.innerWidth < window.screen.width * 0.5 || window.innerWidth < 1200) {
+                headers.forEach(function(header) {
+                    header.style.opacity = '0';
+                });
+            } else {
+                headers.forEach(function(header) {
+                    header.style.opacity = '1';
+                });
+            }
+        }
+
+      // Initial call to set headers opacity based on window width
+      fadeHeaders();
+
+      // Event listener for window resize to adjust headers opacity
+      window.addEventListener('resize', function() {
+          fadeHeaders();
+      });
+  </script>
             </section>
           </section>
 </main>
