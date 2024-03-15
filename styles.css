@@ -1,44 +1,36 @@
 body {
     margin: 0;
- 
     background-color: #EDEDED;
-    
   }
-  canvas {
+
+canvas {
     position: fixed !important;
  }
  
 header {
-    font-family: 'Neu', sans-serif; /* Use the custom font in your styles */
-    /* Other styles for the body */
-    /* Replace with your desired background color */
-   
-    text-align: left; /* Align text to the left */
+    font-family: 'Neu', sans-serif; 
+    text-align: left; 
     position: fixed;
     
 }
 
 header h1 {
-    padding-top: 0px; /* Remove top and bottom margin to move text to the top-left corner */
-    font-size: 2.5vw; /* Adjust the font size as needed */
+    padding-top: 0px; 
+    font-size: 2.5vw; 
     position: fixed;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     line-height: 3rem;
-    /* Add the text stroke effect */
-    color: #004FE8; /* Set text color to transparent to avoid double fill */
+    color: #004FE8; 
 }
 
 .char {
   transform: translateY(115px);
-  
 }
-
 
 .container {
     max-width: 1960px;
     margin: 0 auto 0 20px;
-    padding: 20 70px; /* Add left and right padding */
-   
+    padding: 20 70px; 
 }
 
 .descriptor{
@@ -51,13 +43,8 @@ header h1 {
   font-size:calc(15px + 1.5vw);
   text-align: left; 
   font-weight: 100;
- 
-   overflow-wrap: break-word;
-  
+  overflow-wrap: break-word;
 }
-
-
-
 
 .pointerevents{
   pointer-events: all;
@@ -66,24 +53,19 @@ header h1 {
 .menu-item {
   margin-top: 8vw; 
   margin-right: 0px;
-  
-    text-align: right;
+  text-align: right;
   pointer-events: none;
-    
-   
-  
-    opacity: 0;
-    transform: translateY(-400px);
-    transition: opacity 2s ease-in-out, transform 1s ease-in-out, color 0.3s ease-in-out;
-    transform-origin: 100% 50%;
-   
+  opacity: 0;
+  transform: translateY(-400px);
+  transition: opacity 2s ease-in-out, transform 1s ease-in-out, color 0.3s ease-in-out;
+  transform-origin: 100% 50%;
 }
 
 .titular{
   transition: opacity 2s ease-in-out, transform 1s ease-in-out, color 0.3s ease-in-out;
   font-size: calc(15vw - 7px);
   font-family: 'Neu', sans-serif;
-    color: #EDEDED;
+  color: #EDEDED;
   -webkit-text-stroke-width: 0.2vw;
   -webkit-text-stroke-color: #004FE8;
   line-height: 2vw;
@@ -94,90 +76,77 @@ header h1 {
   text-align: right;
   color: #004FE8;
   font-family: "Robo", sans-serif;
-
- height: 10vw;
+  height: 10vw;
 }
+
 .title{
   margin-top: 6vw; 
- 
   margin-left:20vw;  
   opacity:1;
-    font-family: 'Neu', sans-serif;
-    color: #EDEDED;
-    text-align: right;
+  font-family: 'Neu', sans-serif;
+  color: #EDEDED;
+  text-align: right;
   right: 5px;
-    -webkit-text-stroke-width: 0.1vw;
-    -webkit-text-stroke-color: #004FE8;
-    font-size: 9vw;
-    line-height: 0vw;
+  -webkit-text-stroke-width: 0.1vw;
+  -webkit-text-stroke-color: #004FE8;
+  font-size: 9vw;
+  line-height: 0vw;
   pointer-events: none;
-  
 }
+
 .subtitle{
   font-size: 1.5vw; /* Adjust the font size as needed */
-      color: #004FE8; /* Change the color if desired */
-      margin-top: 9.5vw; /* Adjust the margin top as needed */
-      text-align: right;
-      margin-right: 0.6vw;
-      font-family: 'NeuSmall', sans-serif;
-      pointer-events: none;
-      
-      
-  
+  color: #004FE8; /* Change the color if desired */
+  margin-top: 9.5vw; /* Adjust the margin top as needed */
+  text-align: right;
+  margin-right: 0.6vw;
+  font-family: 'NeuSmall', sans-serif;
+  pointer-events: none;
 }
+
 .bottomLink{
-      font-size: 14px; /* Adjust the font size as needed */
-      color: #004FE8; /* Change the color if desired */
-      font-weight: 600; 
-      transition: opacity 0.5s ease;
-      font-family: 'NeuSmall', sans-serif;
-      
-      
-      
-  
+  font-size: 14px; /* Adjust the font size as needed */
+  color: #004FE8; /* Change the color if desired */
+  font-weight: 600; 
+  transition: opacity 0.5s ease;
+  font-family: 'NeuSmall', sans-serif;       
 }
 
 .hide-on-phone {
-  display: block; /* Ensure the element is displayed by default */
+  display: block;
 }
 
-/* Media query for phone devices */
 @media only screen and (max-width: 480px) {
-  /* Styles to apply when the screen width is 480px or less (typical phone devices) */
   .hide-on-phone {
-      display: none; /* Hide the element on phones */
+      display: none; 
   }
 }
 
 .titular:hover, .titular:focus {
-  transition:transform 0.3s ;
-  
-    color: #004FE8;/* Scale up to 120% on hover */
-   /* Change text color on hover (you can customize the color) */
+  transition:transform 0.3s;
+  color: #004FE8;
 }
-/* Hover effect */
+
 .menu-item:hover, .menu-item:focus {
   transition:transform 0.3s ;
   transform:  perspective(300px) rotateY(1deg) !important;
-    color: #004FE8;/* Scale up to 120% on hover */
-   /* Change text color on hover (you can customize the color) */
+  color: #004FE8;
 }
 
 .project con{
   float: right;
-  
   padding-right: 0px;
   transform: perspective(800px) rotateY(-20deg);
   transform-origin: 100% 30%;
   }
+
 .project titlecon{
   float: right;
   padding-top: 10px;
   padding-right: 40px;
-  
   }
 
-  .noHover{
+.noHover{
     pointer-events: none;
 }
 
@@ -185,10 +154,7 @@ header h1 {
   position: fixed;
   display: flex;
   justify-content: left;
-
- 
   transform: translateY(-50%);
-
   text-align: center;
   opacity: 0;
   animation: slideIn 0.5s ease-out forwards;
@@ -206,7 +172,6 @@ header h1 {
   position: relative;
   margin: -95px;
   margin-top: -54px;
- 
 }
 
 .eye {
@@ -226,23 +191,22 @@ header h1 {
   border-bottom: 4px solid #004FE8;
   border-right: 4px solid #004FE8;
   z-index: 97;
-  
 }
-
 
 .projectcontainer{
-position: absolute;
-max-width: 50vw;
-margin-top: 20vh;
-margin-left: 20vw;
-width: 10vw;
-height: 10vw;
-border: 3px solid lime;
+  position: absolute;
+  max-width: 50vw;
+  margin-top: 20vh;
+  margin-left: 20vw;
+  width: 10vw;
+  height: 10vw;
+  border: 3px solid lime;
 }
+
 .pupil {
   width: 47px;
   height: 75px;
-  background-image: url("pupil.png");
+  background-image: url("res/pupil.png");
   background-size: 75px 75px;
   position: absolute;
   top: 50%;
@@ -264,93 +228,76 @@ border: 3px solid lime;
 }
 
 .circle {
-    position: absolute;
-    display: block;
-    width: 26px;
-    height: 26px;
-    border-radius: 20px;
-    background-color: #004FE8;
+  position: absolute;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 20px;
+  background-color: #004FE8;
 }
   
-  .bottombutton {
-    position: fixed;
+.bottombutton {
+  position: fixed;
   z-index: 1000;
-    bottom: 0;
-    left: 0;
-    margin: 16px;
-    transition: all .2s ease-in-out;
-    animation: elasticScale 0.5s ease-out;  /* Adjust the margin as needed */
-  }
-  .bottomlink {
-    position: fixed;
-    z-index: 1000;
-    bottom: 0;
-    left: 0;
-   
-     /* Adjust the margin as needed */
-  }
-
-  .linksContainer {
-    position: fixed;
-    bottom: 0;
-    left: 150px;
-    padding: 0px;
-    transition: all .2s ease-in-out;
-    animation: elasticScale 0.5s ease-out;
+  bottom: 0;
+  left: 0;
+  margin: 16px;
+  transition: all .2s ease-in-out;
+  animation: elasticScale 0.5s ease-out;  
 }
 
+.bottomlink {
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;
+}
 
-  .p5Canvas{
-    z-index: -1000;
-  }
- 
-    
-    .bottombutton:hover { 
-        transform: scale(1.2);
-     
-    }
-    
-    .flex-container {
-      margin-left: 20vw;
-      padding-top: 10vw;
-       display: flex;
-       top: 10vw;
-       flex-wrap: wrap;
-       height: 30%;
-       justify-content: space-evenly;
-       max-width: 1200px;
-       /* Maximum width for 2 columns */
-     }
-    
- 
-     .flex-item {
-     
-     
-       margin: 10px;
-       
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       
-     }
+.linksContainer {
+  position: fixed;
+  bottom: 0;
+  left: 150px;
+  padding: 0px;
+  transition: all .2s ease-in-out;
+  animation: elasticScale 0.5s ease-out;
+}
 
-     .overflowWrapper{
-      border: 3px solid lime;
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-      position: fixed;
-     }
+.p5Canvas{
+  z-index: -1000;
+}
  
-     .flex-item:nth-child(2n) {
-      /* Red */
-     }
+.bottombutton:hover { 
+  transform: scale(1.2);
+}
+    
+.flex-container {
+  margin-left: 20vw;
+  padding-top: 10vw;
+  display: flex;
+  top: 10vw;
+  flex-wrap: wrap;
+  height: 30%;
+  justify-content: space-evenly;
+  max-width: 1200px;
+}
+    
  
-     .flex-item:nth-child(3n) {
-       /* Green */
-     }
+.flex-item {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    @keyframes slideIn {
+.overflowWrapper{
+  border: 3px solid lime;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+}
+
+  @keyframes slideIn {
       from {
           opacity: 0;
       }
@@ -371,49 +318,47 @@ border: 3px solid lime;
     }
 }
 
-/* Add this at the beginning of your styles.css file */
-
 @font-face {
     font-family: 'Moda';
-    src: url('Fonts/Moda.otf') format('opentype'); /* Adjust the file name and format accordingly */
+    src: url('Fonts/Moda.otf') format('opentype'); 
 }
 
 @font-face {
     font-family: 'Robinson';
-    src: url('Fonts/Robinson.otf') format('opentype'); /* Adjust the file name and format accordingly */
+    src: url('Fonts/Robinson.otf') format('opentype'); 
 }
 @font-face {
     font-family: 'Ropinie';
-    src: url('Fonts/Ropinie.otf') format('opentype'); /* Adjust the file name and format accordingly */
+    src: url('Fonts/Ropinie.otf') format('opentype'); 
 }
 @font-face {
     font-family: 'Ramesha Bold';
-    src: url('Fonts/Ramesha Bold.otf') format('opentype'); /* Adjust the file name and format accordingly */
+    src: url('Fonts/Ramesha Bold.otf') format('opentype'); 
 }
 @font-face {
     font-family: 'Moda';
-    src: url('Fonts/Moda.otf') format('opentype'); /* Adjust the file name and format accordingly */
+    src: url('Fonts/Moda.otf') format('opentype'); 
 }
 @font-face {
     font-family: 'Uniqlo';
-    src: url('Fonts/Uniclo-BlackItalic.otf') format('opentype'); /* Adjust the file name and format accordingly */
+    src: url('Fonts/Uniclo-BlackItalic.otf') format('opentype'); 
 }
 @font-face {
     font-family: 'Neu';
-    src: url('Fonts/NeuethingSans-ExtraBoldUltraExpanded.ttf') format('truetype'); /* Adjust the file name and format accordingly */
+    src: url('Fonts/NeuethingSans-ExtraBoldUltraExpanded.ttf') format('truetype'); 
 }
 @font-face {
   font-family: 'NeuSmall';
-  src: url('Fonts/NeuethingSans-RegularExpanded.ttf') format('truetype'); /* Adjust the file name and format accordingly */
+  src: url('Fonts/NeuethingSans-RegularExpanded.ttf') format('truetype'); 
 }
 @font-face {
   font-family: 'NeuPara';
-  src: url('Fonts/NeuethingSans-BoldSemiExpanded.ttf') format('truetype'); /* Adjust the file name and format accordingly */
+  src: url('Fonts/NeuethingSans-BoldSemiExpanded.ttf') format('truetype'); 
 }
 @font-face {
   font-family: 'Robo';
-  src: url('Fonts/roboto.thin.ttf') format('truetype'); /* Adjust the file name and format accordingly */
+  src: url('Fonts/roboto.thin.ttf') format('truetype');
 }
-/* Rest of your CSS styles */
+
 
 
