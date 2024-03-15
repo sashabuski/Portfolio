@@ -491,13 +491,23 @@ const animationLeaveMenu = (data) => {
     data.current.container.childNodes[7].style.transform = `translateX(-60px)`;
   }, 50);
 
+
+
+  timeline.to( data.current.container.childNodes[7], {
+    autoAlpha: 0,
+    delay: 0,
+    duration: 0.5,
+    ease: "none",
+  });
   timeline.to(data.current.container, {
     delay: 1.5,
     autoAlpha: 0,
-    duration: 0,
+    duration: 0.2,
     clearProps: "all",
     ease: "none",
   });
+
+ 
   return timeline;
 };
 
