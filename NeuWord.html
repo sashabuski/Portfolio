@@ -9,7 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
 <script src="background2.js" style="position: fixed;"></script>
-    <script src="https://unpkg.com/split-type"></script>
+
+<script src="https://unpkg.com/split-type"></script>
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
@@ -38,8 +39,6 @@
       </div>
   </div>
 
-  
-
   <div class="cursor">
   
     <div class="circle"></div>
@@ -64,9 +63,8 @@
       <div class="circle"></div>
     </div>
 
-
 <main >
-  <!-- Unchanged Content -->
+ 
   <section data-barba="wrapper">
   <section data-barba="container" style="position: absolute; width: 99vw; float: right;">
  
@@ -114,38 +112,12 @@
         <h2 class="bottomLink"style="margin-bottom: 23px;">sashabuskin12@gmail.com</h2>
     </div>
 
-    <script>
-      // Function to fade out headers when window width is below 50%
-      function fadeHeaders() {
-          var container = document.querySelector('.linksContainer');
-          var headers = container.querySelectorAll('.bottomLink');
-         
-          if (window.innerWidth < window.screen.width * 0.5 || window.innerWidth < 1200) {
-                headers.forEach(function(header) {
-                    header.style.opacity = '0';
-                });
-            } else {
-                headers.forEach(function(header) {
-                    header.style.opacity = '1';
-                });
-            }
-        }
-
-      // Initial call to set headers opacity based on window width
-      fadeHeaders();
-
-      // Event listener for window resize to adjust headers opacity
-      window.addEventListener('resize', function() {
-          fadeHeaders();
-      });
-  </script>
+    
             </section>
           </section>
 </main>
+    
         <script src="script.js"></script>
 </body>
-
-
-
 
 </html>
