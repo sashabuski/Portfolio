@@ -137,6 +137,18 @@ header h1 {
   
 }
 
+.hide-on-phone {
+  display: block; /* Ensure the element is displayed by default */
+}
+
+/* Media query for phone devices */
+@media only screen and (max-width: 480px) {
+  /* Styles to apply when the screen width is 480px or less (typical phone devices) */
+  .hide-on-phone {
+      display: none; /* Hide the element on phones */
+  }
+}
+
 .titular:hover, .titular:focus {
   transition:transform 0.3s ;
   
