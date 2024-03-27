@@ -7,20 +7,38 @@ canvas {
     position: fixed !important;
  }
  
-header {
-    font-family: 'Neu', sans-serif; 
-    text-align: left; 
-    position: fixed;
-    
+.trans{
+
 }
 
-header h1 {
-    padding-top: 0px; 
-    font-size: 2.5vw; 
-    position: fixed;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    line-height: 3rem;
-    color: #004FE8; 
+ .ttlname {
+   
+  font-size: 2.5vw; 
+  position: fixed;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+ 
+  color: #004FE8; 
+  font-family: 'Neu', sans-serif; 
+  text-align: left; 
+  position: fixed;
+  z-index: 100000000000000;
+}
+
+a, a:hover, a:visited, a:active {
+  color: inherit;
+  text-decoration: none;
+ }
+
+.header-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1960px;
+margin: 0 0 0 20px;
+padding: 20 70px; 
 }
 
 .char {
@@ -251,8 +269,12 @@ header h1 {
   z-index: 1000;
   bottom: 0;
   left: 0;
+  transition: all .2s ease-in-out;
+  animation: elasticScale 0.5s ease-out;  
 }
-
+.bottomlink:hover { 
+  transform: scale(1.2);
+}
 .linksContainer {
   position: fixed;
   bottom: 0;

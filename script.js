@@ -1,3 +1,4 @@
+
 const balls = document.getElementsByClassName("pupil");
 
 document.onmousemove = (event) => {
@@ -544,7 +545,10 @@ barba.init({
       name: "back",
       priority: 1,
       custom: ({ trigger }) => {
+       
+        console.log("backinbkack");
         return trigger === "back";
+        
       },
 
       leave: (data) => animationLeavePage(data),
@@ -554,6 +558,20 @@ barba.init({
         animationEnterMenu(next.container);
       },
     },
+    {
+      name: "back2",
+      priority: 1,
+      custom: ({ trigger }) => {
+        return trigger.classList && trigger.classList.contains('trans');
+      },
+
+      leave: (data) => animationLeavePage(data),
+      enter: ({ next }) => {
+      
+
+        animationEnterMenu(next.container);
+      },
+    }
   ],
 });
 
