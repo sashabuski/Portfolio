@@ -202,12 +202,13 @@ if (titleElement !== null) {
           var header = container.querySelector('.bottomLink');
          
           if (window.innerWidth < window.screen.width * 0.5 || window.innerWidth < 1200) {
-                
+                if (header != null){
                     header.style.opacity = '0';
-              
+              }
             } else {
-                
+                   if (header != null){
                     header.style.opacity = '1';
+                   }
                 
             }
           })
