@@ -267,8 +267,16 @@ padding: 20 70px;
   font-family: 'NeuSmall', sans-serif;    
   text-align: center;   
 }
-
-
+@media screen and (max-width: 480px) {
+  .show-on-desktop {
+    display: none;
+  }
+}
+@media screen and (min-width: 481px) {
+  .hide-on-desktop {
+    display: none;
+  }
+}
 
 .bottomLink:hover { 
   transform: scale(1.1);

@@ -100,26 +100,6 @@
            
     
 
-
-          function fadeHeaders() {
-          var containers = document.querySelectorAll('.linksContainer');
-          containers.forEach(function(container){
-          var header = container.querySelector('.bottomLink');
-         
-          if (window.innerWidth < window.screen.width * 0.5 || window.innerWidth < 1200) {     
-                    header.style.opacity = '0';
-
-            } else {
-                    header.style.opacity = '1';
-            }
-          })
-        }
-        
-          fadeHeaders();
-  
-          window.addEventListener('resize', function() {
-              fadeHeaders();
-          });
       </script>
 </body>
 

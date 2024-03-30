@@ -1,4 +1,4 @@
-
+console.log("UPDATESARRIVED");
 const balls = document.getElementsByClassName("pupil");
 
 document.onmousemove = (event) => {
@@ -174,7 +174,7 @@ gsap.ticker.add((time)=>{
 }
 initScroll();
 
-console.log("KAKSKAKA");
+
         window.addEventListener("scroll", function () {
 
         var scrollPosition = window.scrollY;
@@ -519,7 +519,7 @@ barba.init({
       priority: 1,
       custom: ({ trigger }) => {
        
-        console.log("backinbkack");
+   
         return trigger === "back";
         
       },
