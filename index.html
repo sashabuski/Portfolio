@@ -50,17 +50,6 @@
       <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
     </div>
 
 <main id="canvasMain"></main>
@@ -98,28 +87,33 @@
                 </a>
             </div>
             <div class="linksContainer">
-              <a href="res/Sasha_Buskin_CV.pdf" target="_blank" style="text-decoration:none;"><h2 class="bottomLink" style="margin-bottom: 5px;">resume</h2></a>
-              <h2 class="bottomLink"style="margin-bottom: 23px;">sashabuskin12@gmail.com</h2>
+              <a href="res/Sasha_Buskin_CV.pdf" target="_blank" style="text-decoration:none;"><h2 class="bottomLink" style="margin-bottom: 50px;">resume</h2></a>
+            </div>
+              <div class="linksContainer">
+              <h2 id="textToCopy"  class="bottomLink clickable"style="margin-bottom: 23px;">sashabuskin12@gmail.com</h2>
           </div>
 </section>
 </section>
 </main>
         <script src="script.js"></script>
         <script>
-          
+           
+    
+
+
           function fadeHeaders() {
-              var container = document.querySelector('.linksContainer');
-              var headers = container.querySelectorAll('.bottomLink');
-              if (window.innerWidth < window.screen.width * 0.7) {
-                  headers.forEach(function(header) {
-                      header.style.opacity = '0';
-                  });
-              } else {
-                  headers.forEach(function(header) {
-                      header.style.opacity = '1';
-                  });
-              }
-          }
+          var containers = document.querySelectorAll('.linksContainer');
+          containers.forEach(function(container){
+          var header = container.querySelector('.bottomLink');
+         
+          if (window.innerWidth < window.screen.width * 0.5 || window.innerWidth < 1200) {     
+                    header.style.opacity = '0';
+
+            } else {
+                    header.style.opacity = '1';
+            }
+          })
+        }
         
           fadeHeaders();
   

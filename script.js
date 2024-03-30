@@ -197,18 +197,20 @@ if (titleElement !== null) {
         });
 
       function fadeHeaders() {
-          var container = document.querySelector('.linksContainer');
-          var headers = container.querySelectorAll('.bottomLink');
-          console.log("KAKSWD22KAKA");
+          var containers = document.querySelectorAll('.linksContainer');
+          containers.forEach(function(container){
+          var header = container.querySelector('.bottomLink');
+         
           if (window.innerWidth < window.screen.width * 0.5 || window.innerWidth < 1200) {
-                headers.forEach(function(header) {
+                
                     header.style.opacity = '0';
-                });
+              
             } else {
-                headers.forEach(function(header) {
+                
                     header.style.opacity = '1';
-                });
+                
             }
+          })
         }
 
       fadeHeaders();
@@ -349,7 +351,6 @@ const animationEnterMenu = (container) => {
 
   for (let i = fadeHeadersBefore.length - 1; i >= 0; i--) {
     const valueAtIndex = fadeHeadersBefore[i];
-
     fadeHeaders.push(valueAtIndex);
   }
 
@@ -365,8 +366,7 @@ const animationEnterMenu = (container) => {
   });
   setTimeout(() => {
   
-    fadeHeaders.forEach(function (header) {
-      
+    fadeHeaders.forEach(function (header) {     
       header.style.pointerEvents = "all"; 
     });
   }, 1700);
@@ -442,28 +442,7 @@ const animationLeaveMenu = (data) => {
   });
   const timeline = gsap.timeline();
 
-  let x = 0;
-
-  switch (data.trigger.id) {
-    case "1":
-      x = -40;
-      break;
-    case "2":
-      x = -34.5;
-      break;
-    case "3":
-      x = -49;
-      break;
-    case "4":
-      x = -63.5;
-      break;
-    case "5":
-      x = -78;
-      break;
-  }
-
-
-  timeline.to(data.current.container.childNodes[1].childNodes[1], {
+   timeline.to(data.current.container.childNodes[1].childNodes[1], {
     scale: 0.6,
     perspective: "none",
     rotateY: 0,
@@ -479,27 +458,21 @@ const animationLeaveMenu = (data) => {
     ease: "none",
   });
 
-  data.current.container.childNodes[3].style.transition =
-    "transform 0.5s ease-inout";
+  data.current.container.childNodes[3].style.transition = "transform 0.5s ease-inout";
   data.current.container.childNodes[3].style.transform = `translateY(-55px)`;
 
   setTimeout(() => {
-    data.current.container.childNodes[5].style.transition =
-      "transform 0.5s ease-inout";
+    data.current.container.childNodes[5].style.transition = "transform 0.5s ease-inout";
     data.current.container.childNodes[5].style.transform = `translateX(-60px)`;
-    data.current.container.childNodes[7].style.transition =
-      "transform 0.5s ease-inout";
+    data.current.container.childNodes[7].style.transition = "transform 0.5s ease-inout"; 
     data.current.container.childNodes[7].style.transform = `translateX(-60px)`;
+    data.current.container.childNodes[9].style.transition = "transform 0.5s ease-inout";
+    data.current.container.childNodes[9].style.transform = `translateX(-60px)`;
   }, 50);
+  
 
 
 
-  timeline.to( data.current.container.childNodes[7], {
-    autoAlpha: 0,
-    delay: 0,
-    duration: 0.5,
-    ease: "none",
-  });
   timeline.to(data.current.container, {
     delay: 1.5,
     autoAlpha: 0,
@@ -574,6 +547,8 @@ barba.init({
     }
   ],
 });
+
+
 
 window.mobileCheck = function () {
   let check = false;
