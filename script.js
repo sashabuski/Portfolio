@@ -1,6 +1,6 @@
 console.log("UPDATESARRIVED");
 const balls = document.getElementsByClassName("pupil");
-
+//commit test
 document.onmousemove = (event) => {
   const x = (event.clientX * 100) / window.innerWidth + "%";
   const y = (event.clientY * 100) / window.innerHeight + "%";
@@ -199,7 +199,7 @@ if (titleElement !== null) {
       function fadeHeaders() {
           var containers = document.querySelectorAll('.linksContainer');
           containers.forEach(function(container){
-          var header = container.querySelector('.indexBottomLink');
+          var header = container.querySelector('.bottomLink');
          
           if (window.innerWidth < window.screen.width * 0.5 || window.innerWidth < 1200) {
                 if (header != null){
@@ -420,7 +420,8 @@ const animationEnter = (container) => {
 };
 
 const animationLeaveMenu = (data) => {
-  //fade menu items
+  //console.log("animationLeaveMenu");
+
   const arrayOfDivs = [];
 
   arrayOfDivs.push(data.trigger);
@@ -441,7 +442,7 @@ const animationLeaveMenu = (data) => {
     header.style.pointerEvents = "none"; 
   });
   const timeline = gsap.timeline();
-//swing menu
+
    timeline.to(data.current.container.childNodes[1].childNodes[1], {
     scale: 0.6,
     perspective: "none",
@@ -449,8 +450,8 @@ const animationLeaveMenu = (data) => {
     duration: 0.4,
     ease: "power2.inOut",
   });
-  
-  //fade menu
+  // timeline.to(container.childNodes[1].childNodes[1], {rotateY: 0,duration: 0.5, ease: 'power2.inOut' });
+  // timeline.to(arrayOfDivs, { autoAlpha: 0,stagger:0.05, duration: 0.25,  ease: 'none' });
   timeline.to(arrayOfDivs, {
     autoAlpha: 0,
     stagger: 0.2,
@@ -458,16 +459,23 @@ const animationLeaveMenu = (data) => {
     ease: "none",
   });
 
-  
+  data.current.container.childNodes[3].style.transition = "transform 0.5s ease-inout";
+  data.current.container.childNodes[3].style.transform = `translateY(-55px)`;
+
   setTimeout(() => {
-   
+    data.current.container.childNodes[5].style.transition = "transform 0.5s ease-inout";
+    data.current.container.childNodes[5].style.transform = `translateX(-60px)`;
+    data.current.container.childNodes[7].style.transition = "transform 0.5s ease-inout"; 
+    data.current.container.childNodes[7].style.transform = `translateX(-60px)`;
+    data.current.container.childNodes[9].style.transition = "transform 0.5s ease-inout";
+    data.current.container.childNodes[9].style.transform = `translateX(-60px)`;
   }, 50);
   
 
 
 
   timeline.to(data.current.container, {
-    delay: 1,
+    delay: 1.5,
     autoAlpha: 0,
     duration: 0.2,
     clearProps: "all",
