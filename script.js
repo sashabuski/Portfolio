@@ -1,3 +1,47 @@
+
+window.onload = function() {
+  setTimeout(function() {
+    
+    const lenis = new Lenis()
+
+lenis.on('scroll', (e) => {
+    console.log(e)
+})
+
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
+    
+    // Your code to execute after 2 seconds
+      console.log("2 seconds have passed since the page loaded.");
+  }, 1000); // 2000 milliseconds = 2 seconds
+};
+
+
+function restartLenis(){
+   
+   setTimeout(function() {
+    
+    const lenis = new Lenis()
+
+lenis.on('scroll', (e) => {
+   console.log(e)
+})
+
+ function raf(time) {
+   lenis.raf(time)
+   requestAnimationFrame(raf)
+ }
+
+ requestAnimationFrame(raf)
+   
+   // Your code to execute after 2 seconds
+     console.log("2 seconds have passed since the page loaded.");
+ }, 2000);
+};
 console.log("UPDATESARRIVED");
 const balls = document.getElementsByClassName("pupil");
 //commit test
@@ -514,6 +558,7 @@ barba.init({
       enter: ({ next }) => {
      
         animationEnter(next.container);
+        restartLenis();
         initScroll();
       },
     },
