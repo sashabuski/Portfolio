@@ -267,6 +267,15 @@ padding: 20 70px;
   font-family: 'NeuSmall', sans-serif;    
   text-align: center;   
 }
+.indexBottomLink{
+  font-size: 14px; /* Adjust the font size as needed */
+  color: #004FE8; /* Change the color if desired */
+  font-weight: 600; 
+
+  transition: transform 0.1s ease-in-out,  opacity 0.5s ease;
+  font-family: 'NeuSmall', sans-serif;    
+  text-align: center;   
+}
 @media screen and (max-width: 480px) {
   .show-on-desktop {
     display: none;
@@ -279,6 +288,9 @@ padding: 20 70px;
 }
 
 .bottomLink:hover { 
+  transform: scale(1.1);
+}
+.indexBottomLink:hover { 
   transform: scale(1.1);
 }
 .linksContainer {
