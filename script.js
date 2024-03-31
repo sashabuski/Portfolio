@@ -404,8 +404,10 @@ const animationEnter = (container) => {
 
 
   for (var index = 0; index < container.childNodes.length; index++) {
-   // console.log(index + " " + container.childNodes[index]);
+    console.log(index + " " + container.childNodes[index]);
   }
+
+
 
   timeline.from(container, {
     delay: 2,
@@ -475,7 +477,7 @@ const animationLeaveMenu = (data) => {
 
 
   timeline.to(data.current.container, {
-    delay: 1.5,
+    delay: 1,
     autoAlpha: 0,
     duration: 0.2,
     clearProps: "all",

@@ -286,7 +286,9 @@ padding: 20 70px;
     display: none;
   }
 }
-
+.indexBottomLink:hover { 
+  transform: scale(1.1);
+}
 .bottomLink:hover { 
   transform: scale(1.1);
 }
