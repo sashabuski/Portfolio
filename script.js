@@ -229,14 +229,48 @@ initScroll();
           fadeHeaders();
       });
 
-function titlize(clickedElement) {
+function titlize(clickedElement, id) {
   var fadeHeadersBefore = document.querySelectorAll(".menu-item");
-
+ 
   fadeHeadersBefore.forEach(function (menuItem) {
     
     menuItem.style.pointerEvents = "none"; 
     
   });
+
+  switch(id) {
+    case '1':
+       
+        body.style.height = "1000px"; 
+        html.style.height = "1000px";
+        break;
+    case '2':
+       
+        body.style.height = "3000px"; 
+        html.style.height = "3000px";
+        break;
+    case '3':
+      
+        body.style.height = "2300px"; 
+        html.style.height = "2300px";
+        break;
+    case '4':
+        
+        body.style.height = "2300px"; 
+        html.style.height = "2300px";
+        break;
+    case '5':
+        
+        body.style.height = "2000px"; 
+        html.style.height = "2000px";
+        break;
+    default:
+        console.log("Unknown link clicked");
+        break;
+}
+
+  
+
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -348,8 +382,7 @@ const animationEnter = (container) => {
 
 const animationLeaveMenu = (data) => {
  
-body.style.height = "3500px"; 
-html.style.height = "3500px";
+
   
   const arrayOfDivs = [];
 
