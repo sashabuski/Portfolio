@@ -1,14 +1,14 @@
-console.log("LENISFIXED");
+console.log("LENISFIXEDX2");
 
 var body = document.body;
 var html = document.documentElement;
-
+const lenis = new Lenis()
 // Set the height of the body or html element
 
 window.onload = function() {
   setTimeout(function() {
     
-    const lenis = new Lenis()
+    
 
 lenis.on('scroll', (e) => {
     console.log(e)
@@ -377,6 +377,11 @@ const animationEnter = (container) => {
     duration: 1,
     ease: "none",
   });
+  setTimeout(() => {
+   
+ lenis.scrollTo('top');
+  }, 2000);
+ 
   return timeline;
 };
 
@@ -448,7 +453,7 @@ const animationLeaveMenu = (data) => {
 const animationLeavePage = (data) => {
   body.style.height = "auto"; 
   html.style.height = "auto";
-  
+  lenis.scrollTo('top');
   const timeline = gsap.timeline();
 
   timeline.to(data.current.container, {
