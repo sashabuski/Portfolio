@@ -1,3 +1,9 @@
+console.log("LENISFIXED");
+
+var body = document.body;
+var html = document.documentElement;
+
+// Set the height of the body or html element
 
 window.onload = function() {
   setTimeout(function() {
@@ -37,9 +43,9 @@ lenis.on('scroll', (e) => {
  }
 
  requestAnimationFrame(raf)
-   
+   lenis.resize()
    // Your code to execute after 2 seconds
-     console.log("2 seconds have passed since the page loaded.");
+   console.log("2 seconds have passed since the page loaded.");
  }, 2000);
 };
 console.log("UPDATESARRIVED");
@@ -111,51 +117,10 @@ animateCircles();
 
 function initScroll() {
   gsap.registerPlugin(ScrollTrigger);
-  /* const lenis = new Lenis()
 
-lenis.on('scroll', (e) => {
-  console.log(e)
-})
-
-lenis.on('scroll', ScrollTrigger.update)
-
-gsap.ticker.add((time)=>{
-  lenis.raf(time * 1000)
-})
- */
   gsap.ticker.lagSmoothing(0);
 
-  /*
-  const splitTypes = document.querySelectorAll('.reveal-type')
-  
-  splitTypes.forEach((char,i) => {
-  
-      const bg = char.dataset.bgColor
-      const fg = char.dataset.fgColor
-  
-      const text = new SplitType(char, { types: 'chars'})
-  
-      gsap.fromTo(text.chars, 
-          {
-              color: bg,
-          },
-          {
-                        
-              color: fg,
-              duration: 0.3,
-              stagger: 0.02,
-              scrollTrigger: {
-                  trigger: char,
-                  start: 'top 80%',
-                  end: 'top 50%',
-                  scrub: true,
-                  markers: false,
-                  toggleActions: 'play play reverse reverse'
-              }
-      })
-  })
 
-  */
 
   const captions = document.querySelectorAll(".descriptor");
 
@@ -230,12 +195,12 @@ initScroll();
         opacity2 = Math.max(0, Math.min(1, opacity2));
 
         var titleElement = document.getElementById("title");
-if (titleElement !== null) {
-    titleElement.style.opacity = opacity;
-}var titleElement = document.getElementById("subtitle");
-if (titleElement !== null) {
-    titleElement.style.opacity = opacity2;
-}
+        if (titleElement !== null) {
+            titleElement.style.opacity = opacity;
+        }var titleElement = document.getElementById("subtitle");
+        if (titleElement !== null) {
+            titleElement.style.opacity = opacity2;
+        }
 
      
         });
@@ -322,69 +287,6 @@ gsap.to(".char", {
   duration: 2.0,
 });
 
-/* barba.init({
-                transitions: [{
-                  sync:false,
-                  name: 'opacity-transition',
-              
-               leave(data) {
-               
-                 animationLeave(data.current.container, data);
-                data.current.container.childNodes[1].childNodes[1].classList.add("snapback");
-              },
-   
-               enter(data) {
-                return gsap.from(data.next.container, {
-                  delay:2,
-        opacity: 0,
-        duration:1.0
-        
-      });
-              }
-            }]
-          });
-
-
-          const animationEnter = (container, data) => {
-            const timeline = gsap.timeline();
-            console.log(container.childNodes[3]);
-            timeline.to(container.childNodes[3], { opacity: 1, duration: 0.25,  ease: 'none' });
-
-
-return timeline;
-
-
-          }
-
-
-
-
-          const animationLeave = (container, data) => {
-  
-  var arrayOfDivs = [];
-  
- 
- 
- for(let i=1;i<10;i +=2){
-  var head = container.childNodes[1].childNodes[1].childNodes[1].childNodes[i];
- 
-  if(data.trigger != head){
-    arrayOfDivs.push(head);
-  }
-
- } 
-
-
- const timeline = gsap.timeline();
-    
-      
-      timeline.to(container.childNodes[1].childNodes[1], {scale: 0.5, perspective: 'none',rotateY: 0,duration: 0.4, ease: 'power2.inOut' });
-     // timeline.to(container.childNodes[1].childNodes[1], {rotateY: 0,duration: 0.5, ease: 'power2.inOut' });
-      timeline.to(arrayOfDivs, { autoAlpha: 0,stagger:0.05, duration: 0.25,  ease: 'none' });
-      timeline.to(container.childNodes[1].childNodes[1], {  y: "-13.58vw",  duration: 0.4,  ease: 'power2.inOut' });
-  // 
-    return timeline;
-    }*/
 
 const animationEnterMenu = (container) => {
   //console.log("animationEnterMenu");
@@ -416,21 +318,6 @@ const animationEnterMenu = (container) => {
     });
   }, 1700);
 
-  /*  var arrayOfDivs = [];
-  
- 
-
-for(let i=1;i<10;i +=2){
- var head = container.childNodes[1].childNodes[1].childNodes[1].childNodes[i];
-console.log("HEAD "+i+head);
- 
-
-
-   arrayOfDivs.push(head);
- 
-
-}
-timeline.to(arrayOfDivs, {  autoAlpha: 1,stagger:0.2, duration: 0.5,  ease: 'none' });   */
 
   timeline.to(container, {
     delay: 2,
@@ -446,12 +333,9 @@ timeline.to(arrayOfDivs, {  autoAlpha: 1,stagger:0.2, duration: 0.5,  ease: 'non
 const animationEnter = (container) => {
   const timeline = gsap.timeline();
 
-
   for (var index = 0; index < container.childNodes.length; index++) {
     console.log(index + " " + container.childNodes[index]);
   }
-
-
 
   timeline.from(container, {
     delay: 2,
@@ -459,15 +343,14 @@ const animationEnter = (container) => {
     duration: 1,
     ease: "none",
   });
-  //timeline.from(container.childNodes[3], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
-  //timeline.from(container.childNodes[5], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
-  //timeline.from(container.childNodes[7], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
   return timeline;
 };
 
 const animationLeaveMenu = (data) => {
-  //console.log("animationLeaveMenu");
-
+ 
+body.style.height = "3500px"; 
+html.style.height = "3500px";
+  
   const arrayOfDivs = [];
 
   arrayOfDivs.push(data.trigger);
@@ -496,8 +379,7 @@ const animationLeaveMenu = (data) => {
     duration: 0.4,
     ease: "power2.inOut",
   });
-  // timeline.to(container.childNodes[1].childNodes[1], {rotateY: 0,duration: 0.5, ease: 'power2.inOut' });
-  // timeline.to(arrayOfDivs, { autoAlpha: 0,stagger:0.05, duration: 0.25,  ease: 'none' });
+
   timeline.to(arrayOfDivs, {
     autoAlpha: 0,
     stagger: 0.2,
@@ -518,8 +400,6 @@ const animationLeaveMenu = (data) => {
   }, 50);
   
 
-
-
   timeline.to(data.current.container, {
     delay: 1,
     autoAlpha: 0,
@@ -533,9 +413,11 @@ const animationLeaveMenu = (data) => {
 };
 
 const animationLeavePage = (data) => {
+  body.style.height = "auto"; 
+  html.style.height = "auto";
+  
   const timeline = gsap.timeline();
 
-  //timeline.to(data.current.container.childNodes[7], { delay: 0,y: 60, duration: 1, clearProps: 'all', ease: 'none'});
   timeline.to(data.current.container, {
     delay: 0,
     autoAlpha: 0,
@@ -543,9 +425,7 @@ const animationLeavePage = (data) => {
     clearProps: "all",
     ease: "none",
   });
-  //timeline.from(container.childNodes[3], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
-  //timeline.from(container.childNodes[5], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
-  //timeline.from(container.childNodes[7], { autoAlpha: 0, duration: 2, clearProps: 'all', ease: 'none'});
+
   return timeline;
 };
 
