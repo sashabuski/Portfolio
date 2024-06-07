@@ -433,8 +433,7 @@ const animationLeaveMenu = (data) => {
     data.current.container.childNodes[5].style.transform = `translateX(-60px)`;
     data.current.container.childNodes[7].style.transition = "transform 0.5s ease-inout"; 
     data.current.container.childNodes[7].style.transform = `translateX(-60px)`;
-    data.current.container.childNodes[9].style.transition = "transform 0.5s ease-inout";
-    data.current.container.childNodes[9].style.transform = `translateX(-60px)`;
+   
   }, 50);
   
 
