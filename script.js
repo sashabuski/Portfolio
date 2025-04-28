@@ -197,9 +197,14 @@ initScroll();
         var titleElement = document.getElementById("title");
         if (titleElement !== null) {
             titleElement.style.opacity = opacity;
-        }var titleElement = document.getElementById("subtitle");
+        }
+        var titleElement = document.getElementById("subtitle");
         if (titleElement !== null) {
             titleElement.style.opacity = opacity2;
+        }
+        var quickLinkBtn = document.getElementById("quickLinkBtn");
+        if (quickLinkBtn !== null) {
+           quickLinkBtn.style.opacity = opacity2;
         }
 
      
@@ -393,7 +398,7 @@ const animationLeaveMenu = (data) => {
 
   arrayOfDivs.push(data.trigger);
 
-  for (let i = 1; i < 10; i += 2) {
+  for (let i = 1; i < 12; i += 2) {
     var head =
       data.current.container.childNodes[1].childNodes[1].childNodes[1]
         .childNodes[i];
