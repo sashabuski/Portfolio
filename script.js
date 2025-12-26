@@ -1,9 +1,7 @@
-console.log("LENISFIXEDX2");
 
 var body = document.body;
 var html = document.documentElement;
 const lenis = new Lenis()
-// Set the height of the body or html element
 
 window.onload = function() {
   setTimeout(function() {
@@ -21,9 +19,8 @@ lenis.on('scroll', (e) => {
 
   requestAnimationFrame(raf)
     
-    // Your code to execute after 2 seconds
-      console.log("2 seconds have passed since the page loaded.");
-  }, 1000); // 2000 milliseconds = 2 seconds
+  
+  }, 1000); 
 };
 
 
@@ -44,34 +41,38 @@ lenis.on('scroll', (e) => {
 
  requestAnimationFrame(raf)
    lenis.resize()
-   // Your code to execute after 2 seconds
+   
    console.log("2 seconds have passed since the page loaded.");
  }, 2000);
 };
-console.log("UPDATESARRIVED");
-const balls = document.getElementsByClassName("pupil");
-//commit test
-document.onmousemove = (event) => {
-  const x = (event.clientX * 100) / window.innerWidth + "%";
-  const y = (event.clientY * 100) / window.innerHeight + "%";
 
-  for (let i = 0; i < balls.length; i++) {
-    balls[i].style.left = x;
-    balls[i].style.top = y;
-    balls[i].transform = "translate(-" + x + ",-" + y + ")";
-  }
-};
+document.addEventListener("mousemove", (e) => {
+  document.querySelectorAll(".eye").forEach(eye => {
+    const pupil = eye.querySelector(".pupil");
+    const rect = eye.getBoundingClientRect();
 
-document.ontouchmove = (event) => {
-  const x = (event.clientX * 100) / window.innerWidth + "%";
-  const y = (event.clientY * 100) / window.innerHeight + "%";
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
 
-  for (let i = 0; i < balls.length; i++) {
-    balls[i].style.left = x;
-    balls[i].style.top = y;
-    balls[i].transform = "translate(-" + x + ",-" + y + ")";
-  }
-};
+    const dx = e.clientX - cx;
+    const dy = e.clientY - cy;
+
+    const angle = Math.atan2(dy, dx);
+
+    const maxX = rect.width * 0.18;
+    const maxY = rect.height * 0.18;
+
+    const offsetX = Math.cos(angle) * maxX;
+    const offsetY = Math.sin(angle) * maxY;
+
+    pupil.style.transform = `
+      translate(-50%, -50%)
+      translate(${offsetX}px, ${offsetY}px)
+    `;
+  });
+});
+
+
 const coords = { x: 0, y: 0 };
 const circles = document.querySelectorAll(".circle");
 
@@ -306,6 +307,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fadeHeaders.forEach(function (header) {
      
       header.style.pointerEvents = "all"; 
+      lenis.resize();
     });
   }, 1700);
 });

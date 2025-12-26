@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Eye Tracking Test (Top Left)</title>
+
+<style>
+  body {
+    height: 200vh; /* allow scrolling to prove robustness */
+    margin: 0;
+    background: #0e0e0e;
+  }
+
+  /* container pinned to top-left */
+  .eyes {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .eye {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background: #ffffff;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .pupil {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #000000;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+</head>
+<body>
+
+<div class="eyes">
+  <div class="eye"><div class="pupil"></div></div>
+  <div class="eye"><div class="pupil"></div></div>
+</div>
+
+<script>
+  document.addEventListener("mousemove", (e) => {
+    document.querySelectorAll(".eye").forEach(eye => {
+      const pupil = eye.querySelector(".pupil");
+      const rect = eye.getBoundingClientRect();
+
+      const eyeCenterX = rect.left + rect.width / 2;
+      const eyeCenterY = rect.top + rect.height / 2;
+
+      const dx = e.clientX - eyeCenterX;
+      const dy = e.clientY - eyeCenterY;
+
+      const angle = Math.atan2(dy, dx);
+      const maxMove = rect.width * 0.22;
+
+      pupil.style.transform = `
+        translate(
+          ${Math.cos(angle) * maxMove}px,
+          ${Math.sin(angle) * maxMove}px
+        )
+      `;
+    });
+  });
+</script>
+
+</body>
+</html>

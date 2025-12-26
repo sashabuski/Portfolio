@@ -64,7 +64,7 @@ function draw() {
 		if(rs[i]>TAU || rs[i]<0)rs[i] = (rs[i]+TAU)%TAU;
 	}
 
- */
+ 
   let cols = width/40; // Number of columns
   let rows = height/40; // Number of rows
   let cellWidth = width / cols;
@@ -72,7 +72,7 @@ function draw() {
 
   // Set stroke properties
   strokeWeight(1); // Set a smaller stroke weight
-  stroke(0, 0, 255, 2); // Set a blue stroke color
+  stroke(0, 0, 255, 0); // Set a blue stroke color
 
   // Draw vertical lines
   for (let i = 1; i < cols; i++) {
@@ -85,7 +85,7 @@ function draw() {
     let y = j * cellHeight;
     line(0, y, width, y);
   }
- 
+ */
 
   //fs = fullscreen();
   if (!f) {
