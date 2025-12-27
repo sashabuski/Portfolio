@@ -72,7 +72,7 @@ document.addEventListener("mousemove", (e) => {
   });
 });
 
-
+/*
 const coords = { x: 0, y: 0 };
 const circles = document.querySelectorAll(".circle");
 
@@ -98,7 +98,7 @@ function animateCircles() {
   cursor.style.left = y;
 
   circles.forEach(function (circle, index) {
-    circle.style.left = x - 12 + "px";
+    circle.style.left = x - 120 + "px";
     circle.style.top = y - 12 + "px";
 
     circle.style.scale = (circles.length - index) / circles.length;
@@ -114,7 +114,7 @@ function animateCircles() {
   requestAnimationFrame(animateCircles);
 }
 
-animateCircles();
+animateCircles();*/
 
 function initScroll() {
   gsap.registerPlugin(ScrollTrigger);
@@ -135,7 +135,7 @@ function initScroll() {
 
         start: "top 80%",
         end: "top 50%",
-        toggleActions: "play play reverse reverse", // start the animation when ".box" enters the viewport (once)
+        toggleActions: "play play reverse reverse", 
       },
     });
 
@@ -153,7 +153,7 @@ function initScroll() {
 
           start: "top 80%",
           end: "top 90%",
-          toggleActions: "play play reverse reverse", // start the animation when ".box" enters the viewport (once)
+          toggleActions: "play play reverse reverse", 
         },
       },
     );
@@ -176,7 +176,7 @@ function initScroll() {
 
           start: "top 90%",
           end: "top 50%",
-          toggleActions: "play play reverse reverse", // start the animation when ".box" enters the viewport (once)
+          toggleActions: "play play reverse reverse", 
         },
       },
     );
@@ -433,13 +433,15 @@ const animationLeaveMenu = (data) => {
   });
 
   data.current.container.childNodes[3].style.transition = "transform 0.5s ease-inout";
-  data.current.container.childNodes[3].style.transform = `translateY(-55px)`;
+  data.current.container.childNodes[3].style.transform = `translateY(-60px)`;
+  data.current.container.childNodes[5].style.transition = "transform 0.5s ease-inout";
+  data.current.container.childNodes[5].style.transform = `translateY(-60px)`;
 
   setTimeout(() => {
-    data.current.container.childNodes[5].style.transition = "transform 0.5s ease-inout";
-    data.current.container.childNodes[5].style.transform = `translateX(-60px)`;
-    data.current.container.childNodes[7].style.transition = "transform 0.5s ease-inout"; 
+    data.current.container.childNodes[7].style.transition = "transform 0.5s ease-inout";
     data.current.container.childNodes[7].style.transform = `translateX(-60px)`;
+    data.current.container.childNodes[9].style.transition = "transform 0.5s ease-inout"; 
+    data.current.container.childNodes[9].style.transform = `translateX(-60px)`;
    
   }, 50);
   
