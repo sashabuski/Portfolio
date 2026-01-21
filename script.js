@@ -9,7 +9,7 @@ window.onload = function() {
     
 
 lenis.on('scroll', (e) => {
-    console.log(e)
+    //console.log(e)
 })
 
   function raf(time) {
@@ -31,7 +31,7 @@ function restartLenis(){
     const lenis = new Lenis()
 
 lenis.on('scroll', (e) => {
-   console.log(e)
+  // console.log(e)
 })
 
  function raf(time) {
@@ -42,7 +42,7 @@ lenis.on('scroll', (e) => {
  requestAnimationFrame(raf)
    lenis.resize()
    
-   console.log("2 seconds have passed since the page loaded.");
+  // console.log("2 seconds have passed since the page loaded.");
  }, 2000);
 };
 
@@ -271,7 +271,7 @@ function titlize(clickedElement, id) {
         html.style.height = "2000px";
         break;
     default:
-        console.log("Unknown link clicked");
+     //   console.log("Unknown link clicked");
         break;
 }
 
@@ -375,7 +375,7 @@ const animationEnter = (container) => {
   const timeline = gsap.timeline();
 
   for (var index = 0; index < container.childNodes.length; index++) {
-    console.log(index + " " + container.childNodes[index]);
+   // console.log(index + " " + container.childNodes[index]);
   }
 
   timeline.from(container, {
