@@ -120,13 +120,13 @@ padding: 20 70px;
   right: 1vw;
   -webkit-text-stroke-width: 0.1vw;
   -webkit-text-stroke-color: #004FE8;
-  font-size: 9vw;
+
   line-height: 0vw;
   pointer-events: none;
   position: fixed; 
   float: right; 
   margin-bottom: 0px; 
-  font-size: 8vw;
+  font-size: 7.5vw;
 }
 
 .subtitle{
