@@ -117,7 +117,7 @@ padding: 20 70px;
   font-family: 'Neu', sans-serif;
   color: #EDEDED;
   text-align: right;
-  right: 1vw;
+  right: 20px;
   -webkit-text-stroke-width: 0.1vw;
   -webkit-text-stroke-color: #004FE8;
 
@@ -134,7 +134,7 @@ padding: 20 70px;
   color: #004FE8;
   margin-top: 9vw; 
   text-align: right;
-  margin-right: 1vw;
+  margin-right: 20px;
   font-family: 'NeuSmall', sans-serif;
   pointer-events: none;
   position: fixed;
@@ -378,7 +378,7 @@ padding: 20 70px;
 }
  
 .flex-item {
-  margin: 10px;
+  margin: 20px;
   display: flex;
   justify-content: center;
   align-items: center;

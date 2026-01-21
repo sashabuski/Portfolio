@@ -393,14 +393,12 @@ const animationEnter = (container) => {
 };
 
 const animationLeaveMenu = (data) => {
- 
 
-  
   const arrayOfDivs = [];
 
   arrayOfDivs.push(data.trigger);
 
-  for (let i = 1; i < 12; i += 2) {
+  for (let i = 1; i < 14; i += 2) {
     var head =
       data.current.container.childNodes[1].childNodes[1].childNodes[1]
         .childNodes[i];
