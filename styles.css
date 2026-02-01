@@ -81,7 +81,7 @@ padding: 20 70px;
 }
 
 .menu-item {
-  margin-top: 8vw; 
+  margin-top: 6vw; 
   margin-right: 0px;
   text-align: right;
   pointer-events: none;
@@ -172,6 +172,7 @@ padding: 20 70px;
   padding-right: 0px;
   transform: perspective(800px) rotateY(-20deg);
   transform-origin: 100% 30%;
+  width: 140%;
   }
 
 .project titlecon{
@@ -300,7 +301,7 @@ padding: 20 70px;
   font-size: 14px; /* Adjust the font size as needed */
   color: #004FE8; /* Change the color if desired */
   font-weight: 600; 
-
+letter-spacing: 1px;
   transition: transform 0.1s ease-in-out,  opacity 0.5s ease;
   font-family: 'NeuSmall', sans-serif;    
   text-align: center;   
@@ -309,7 +310,7 @@ padding: 20 70px;
   font-size: 14px; /* Adjust the font size as needed */
   color: #004FE8; /* Change the color if desired */
   font-weight: 600; 
-
+letter-spacing: 1px;
   transition: transform 0.1s ease-in-out,  opacity 0.5s ease;
   font-family: 'NeuSmall', sans-serif;    
   text-align: center;   
@@ -417,27 +418,26 @@ padding: 20 70px;
  margin-top: 40px;
 }
 .quicklink{
-      width: 12.1%;
-      padding-right: 0vw;
-      padding-top: 0.4vw;
-      position: fixed;
-      right: 0;
-      top: 0;
-      font-size: 1.5vw;
-      color: #efefef;
-      margin-top: 8.75vw;
-      text-align: right;
-      margin-right: 32vw;
-      font-family: 'NeuSmall', sans-serif;
-      background-color: #004FE8;
-      border: none;
-      cursor: pointer;
-      height: 2.1vw;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-left: 0px;
+         width: 11%;
+    padding-right: 0vw;
+    position: fixed;
+    right: 0;
+    top: 0;
+    font-size: 1.5vw;
+    color: #efefef;
+    margin-top: 8.85vw;
+    text-align: right;
+    margin-right: 27vw;
+    font-family: 'NeuSmall', sans-serif;
+    background-color: #004FE8;
+    border: none;
+    cursor: pointer;
+    height: 2.1vw;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0px;
 }
 
 .linkimg{
@@ -503,15 +503,15 @@ padding: 20 70px;
 }
 @font-face {
     font-family: 'Neu';
-    src: url('Fonts/NeuethingSans-ExtraBoldUltraExpanded.ttf') format('truetype'); 
+    src: url('Fonts/Akira.otf') format('opentype'); 
 }
 @font-face {
   font-family: 'NeuSmall';
-  src: url('Fonts/NeuethingSans-RegularExpanded.ttf') format('truetype'); 
+  src: url('Fonts/CDLight.otf') format('opentype'); 
 }
 @font-face {
   font-family: 'NeuPara';
-  src: url('Fonts/NeuethingSans-BoldSemiExpanded.ttf') format('truetype'); 
+  src: url('Fonts/CDBold.otf') format('opentype'); 
 }
 @font-face {
   font-family: 'Robo';
@@ -519,4 +519,10 @@ padding: 20 70px;
 }
 
 
-
+.title-row {
+  display: flex;
+  align-items: center;     
+  justify-content: space-between;
+  gap: 1.5rem;        
+  flex-wrap: wrap;   
+}
