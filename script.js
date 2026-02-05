@@ -307,7 +307,9 @@ document.addEventListener("DOMContentLoaded", function () {
     fadeHeaders.forEach(function (header) {
      
       header.style.pointerEvents = "all"; 
-      lenis.resize();
+       setTimeout(() => {
+    lenis.resize();
+  }, 50);
     });
   }, 1700);
 });
@@ -388,7 +390,10 @@ const animationEnter = (container) => {
    
  lenis.scrollTo('top');
   }, 2000);
- lenis.resize();
+ 
+  setTimeout(() => {
+    lenis.resize();
+  }, 50);
   return timeline;
 };
 
@@ -484,7 +489,10 @@ barba.init({
         animationEnter(next.container);
        
         initScroll();
-        lenis.resize();
+        
+         setTimeout(() => {
+    lenis.resize();
+  }, 50);
       },
     },
     {
