@@ -22,8 +22,10 @@ lenis.on('scroll', (e) => {
   
   }, 1000); 
 };
-
-
+window.addEventListener("resize", () => lenis.resize());
+window.addEventListener("load", () => lenis.resize());
+const observer = new MutationObserver(() => lenis.resize());
+observer.observe(document.body, { childList: true, subtree: true });
 /*function restartLenis(){
    
    setTimeout(function() {
