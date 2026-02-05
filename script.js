@@ -24,7 +24,7 @@ lenis.on('scroll', (e) => {
 };
 
 
-function restartLenis(){
+/*function restartLenis(){
    
    setTimeout(function() {
     
@@ -44,7 +44,7 @@ lenis.on('scroll', (e) => {
    
   // console.log("2 seconds have passed since the page loaded.");
  }, 2000);
-};
+}; */
 
 document.addEventListener("mousemove", (e) => {
   document.querySelectorAll(".eye").forEach(eye => {
@@ -388,7 +388,7 @@ const animationEnter = (container) => {
    
  lenis.scrollTo('top');
   }, 2000);
- 
+ lenis.resize();
   return timeline;
 };
 
@@ -482,8 +482,9 @@ barba.init({
       enter: ({ next }) => {
      
         animationEnter(next.container);
-        restartLenis();
+       
         initScroll();
+        lenis.resize();
       },
     },
     {
