@@ -1,7 +1,7 @@
 
 var body = document.body;
 var html = document.documentElement;
-const lenis = new Lenis()
+/*const lenis = new Lenis()
 
 window.onload = function() {
   setTimeout(function() {
@@ -26,7 +26,7 @@ window.addEventListener("resize", () => lenis.resize());
 window.addEventListener("load", () => lenis.resize());
 const observer = new MutationObserver(() => lenis.resize());
 observer.observe(document.body, { childList: true, subtree: true });
-/*function restartLenis(){
+function restartLenis(){
    
    setTimeout(function() {
     
@@ -309,9 +309,9 @@ document.addEventListener("DOMContentLoaded", function () {
     fadeHeaders.forEach(function (header) {
      
       header.style.pointerEvents = "all"; 
-       setTimeout(() => {
-    lenis.resize();
-  }, 50);
+      // setTimeout(() => {
+      // lenis.resize();
+      //}, 50);
     });
   }, 1700);
 });
@@ -388,14 +388,13 @@ const animationEnter = (container) => {
     duration: 1,
     ease: "none",
   });
-  setTimeout(() => {
-   
- lenis.scrollTo('top');
-  }, 2000);
+  //setTimeout(() => {   
+  //lenis.scrollTo('top');
+  //}, 2000);
  
-  setTimeout(() => {
-    lenis.resize();
-  }, 50);
+  //setTimeout(() => {
+  //  lenis.resize();
+  //}, 50);
   return timeline;
 };
 
@@ -466,7 +465,7 @@ const animationLeaveMenu = (data) => {
 const animationLeavePage = (data) => {
   body.style.height = "auto"; 
   html.style.height = "auto";
-  lenis.scrollTo('top');
+ // lenis.scrollTo('top');
   const timeline = gsap.timeline();
 
   timeline.to(data.current.container, {
@@ -492,9 +491,9 @@ barba.init({
        
         initScroll();
         
-         setTimeout(() => {
-    lenis.resize();
-  }, 50);
+        // setTimeout(() => {
+         // lenis.resize();
+        //}, 50);
       },
     },
     {
