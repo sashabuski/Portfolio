@@ -23,7 +23,7 @@ lenis.on('scroll', (e) => {
   }, 1000); 
 };
 
-/*
+
 function restartLenis(){
    
    setTimeout(function() {
@@ -45,7 +45,7 @@ lenis.on('scroll', (e) => {
   // console.log("2 seconds have passed since the page loaded.");
  }, 2000);
 };
-*/
+
 document.addEventListener("mousemove", (e) => {
   document.querySelectorAll(".eye").forEach(eye => {
     const pupil = eye.querySelector(".pupil");
@@ -307,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fadeHeaders.forEach(function (header) {
      
       header.style.pointerEvents = "all"; 
-     // lenis.resize();
+      lenis.resize();
     });
   }, 1700);
 });
@@ -482,7 +482,7 @@ barba.init({
       enter: ({ next }) => {
      
         animationEnter(next.container);
-      //  restartLenis();
+        restartLenis();
         initScroll();
       },
     },
