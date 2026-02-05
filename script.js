@@ -336,7 +336,10 @@ gsap.to(".char", {
 const animationEnterMenu = (container) => {
   //console.log("animationEnterMenu");
   const timeline = gsap.timeline();
-
+  window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   var fadeHeadersBefore = document.querySelectorAll(".menu-item");
 
   const fadeHeaders = [];
@@ -388,10 +391,14 @@ const animationEnter = (container) => {
     duration: 1,
     ease: "none",
   });
-  //setTimeout(() => {   
-  //lenis.scrollTo('top');
-  //}, 2000);
- 
+  setTimeout(() => {   
+  //lenis.scrollTo('top'); 
+  window.scrollTo({
+  top: 0,
+  behavior: 'smooth'
+});
+  }, 2000);
+
   //setTimeout(() => {
   //  lenis.resize();
   //}, 50);
@@ -466,6 +473,11 @@ const animationLeavePage = (data) => {
   body.style.height = "auto"; 
   html.style.height = "auto";
  // lenis.scrollTo('top');
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    
   const timeline = gsap.timeline();
 
   timeline.to(data.current.container, {
