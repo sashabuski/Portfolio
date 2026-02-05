@@ -7,10 +7,6 @@ body {
 canvas {
     position: fixed !important;
  }
- 
-.trans{
-
-}
 
 .widetext{
   width: 65vw !important; 
@@ -49,6 +45,7 @@ padding: 20 70px;
 
 .char {
   transform: translateY(115px);
+  margin-left: 1px;
 }
 
 .container {
@@ -111,8 +108,7 @@ padding: 20 70px;
 }
 
 .title{
-  margin-top: 5.48vw; 
-  margin-left: 20vw;  
+  margin-top: 4.5vw; 
   opacity:1;
   font-family: 'Neu', sans-serif;
   color: #EDEDED;
@@ -120,7 +116,6 @@ padding: 20 70px;
   right: 20px;
   -webkit-text-stroke-width: 0.1vw;
   -webkit-text-stroke-color: #004FE8;
-
   line-height: 0vw;
   pointer-events: none;
   position: fixed; 
@@ -129,18 +124,12 @@ padding: 20 70px;
   font-size: 7.5vw;
 }
 
-.subtitle{
-  font-size: 1.5vw; 
+.subtitle {
+  font-size: 1.5vw;
   color: #004FE8;
-  margin-top: 9vw; 
-  text-align: right;
-  margin-right: 20px;
   font-family: 'NeuSmall', sans-serif;
-  pointer-events: none;
-  position: fixed;
-  right: 0; 
-  top: 0;
 }
+
 
 
 
@@ -417,17 +406,10 @@ letter-spacing: 1px;
  text-align: center;  
  margin-top: 40px;
 }
-.quicklink{
-         width: 11%;
-    padding-right: 0vw;
-    position: fixed;
-    right: 0;
-    top: 0;
+.quicklink {
+    width: auto;
     font-size: 1.5vw;
     color: #efefef;
-    margin-top: 8.85vw;
-    text-align: right;
-    margin-right: 27vw;
     font-family: 'NeuSmall', sans-serif;
     background-color: #004FE8;
     border: none;
@@ -437,9 +419,9 @@ letter-spacing: 1px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 0px;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
 }
-
 .linkimg{
     height: 1.25vw;
       margin-left: 0.7vw;
@@ -447,6 +429,16 @@ letter-spacing: 1px;
       padding-bottom: 0.2vw;
 }
 
+
+.headerRow {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end; /* push both to right */
+  align-items: center;
+  gap: 0.3vw;
+  margin-top: 7vw;
+  right: 20px;
+}
   @keyframes slideIn {
       from {
           opacity: 0;
