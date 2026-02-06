@@ -245,7 +245,7 @@ function titlize(clickedElement, id) {
     menuItem.style.pointerEvents = "none"; 
     
   });
-
+/* 
   switch(id) {
     case '1':
        
@@ -276,7 +276,7 @@ function titlize(clickedElement, id) {
      //   console.log("Unknown link clicked");
         break;
 }
-
+*/
   
 
 }
@@ -428,13 +428,13 @@ const animationLeaveMenu = (data) => {
   });
   const timeline = gsap.timeline();
 
-   timeline.to(data.current.container.childNodes[1].childNodes[1], {
+ /*  timeline.to(data.current.container.childNodes[1].childNodes[1], {
     scale: 0.6,
     perspective: "none",
     rotateY: 0,
     duration: 0.4,
     ease: "power2.inOut",
-  });
+  });*/
 
   timeline.to(arrayOfDivs, {
     autoAlpha: 0,
@@ -559,3 +559,61 @@ window.mobileCheck = function () {
   })(navigator.userAgent || navigator.vendor || window.opera);
   return check;
 };
+
+const titles = document.querySelectorAll('.titular');
+
+/* --- Split into spans --- */
+titles.forEach(title => {
+  const text = title.textContent.trim();
+  title.innerHTML = "";
+
+  [...text].forEach(char => {
+    const span = document.createElement("span");
+    span.textContent = char === " " ? "\u00A0" : char;
+    title.appendChild(span);
+  });
+});
+
+let glowInterval;
+let paused = false;
+
+/* GLOBAL hover detection */
+titles.forEach(title => {
+  title.addEventListener("mouseenter", () => {
+    paused = true;
+    stopGlow();
+
+    // remove active state immediately so hover looks clean
+    document.querySelectorAll('.titular span').forEach(l => l.classList.remove("active"));
+  });
+
+  title.addEventListener("mouseleave", () => {
+    paused = false;
+    startGlow();
+  });
+});
+
+/* --- Constellation glow --- */
+function constellationGlow() {
+  if (paused) return; // stop when hovering
+
+  const letters = document.querySelectorAll('.titular span');
+  const random = letters[Math.floor(Math.random() * letters.length)];
+
+  random.classList.add("active");
+  setTimeout(() => random.classList.remove("active"), 1000);
+}
+
+
+
+
+function startGlow() {
+  glowInterval = setInterval(constellationGlow, 150); // faster than old 120ms
+}
+
+function stopGlow() {
+  clearInterval(glowInterval);
+}
+
+startGlow();
+
